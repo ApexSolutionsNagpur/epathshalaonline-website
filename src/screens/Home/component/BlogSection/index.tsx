@@ -23,10 +23,10 @@ export default function BlogSection() {
     ];
 
     return (
-        <section >
+        <section className="mb-14">
 
             {/* Header */}
-            <div className="flex flex-col lg:flex-row  lg:justify-between items-end my-14">
+            <div className="flex flex-col lg:flex-row  lg:justify-between items-end my-14 ">
                 <div>
                     <p className="text-blue-600 uppercase tracking-widest text-sm font-semibold mb-4">
                         Blog

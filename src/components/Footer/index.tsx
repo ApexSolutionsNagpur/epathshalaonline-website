@@ -2,11 +2,12 @@ import Image from "next/image";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { HiArrowRight } from "react-icons/hi";
+import SectionContainer from "../SectionContainer";
 
 export default function Footer() {
     return (
-        <footer className="bg-[#2563EB] text-white pt-8 pb-8 mt-28">
-            <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <footer className="bg-[#2563EB] text-white pt-8 pb-8">
+            <SectionContainer className="mx-auto ">
 
                 {/* Top Logo Row */}
                 <div className="flex items-center gap-4 mb-10">
@@ -25,7 +26,7 @@ export default function Footer() {
                 <div className="border-t border-white/30 mb-5"></div>
 
                 {/* Grid Section */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div className="grid md:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_2fr] gap-1">
 
                     {/* Quick Links */}
                     <div>
@@ -79,14 +80,14 @@ export default function Footer() {
                             iaculis ridiculus, vivamus urna mattis habitasse.
                         </p>
 
-                        <div className="flex bg-white overflow-hidden py-2 w-[448px]" >
+                        <div className="flex bg-white overflow-hidden py-2 w-full" >
                             <input
                                 type="email"
                                 placeholder="Add email"
                                 className="flex-1 px-4 py-3 text-gray-700 outline-none"
                             />
 
-                            <button className="bg-[#2563EB] px-10 flex items-center justify-center hover:bg-[#244bb0] transition mr-6">
+                            <button className="bg-[#2563EB] px-10 flex items-center justify-center hover:bg-[#244bb0] transition mr-8">
                                 <HiArrowRight className="text-white text-xl" />
                             </button>
                         </div>
@@ -98,7 +99,7 @@ export default function Footer() {
                     2025 Copyright © Sparklethings
                 </div>
 
-            </div>
+            </SectionContainer>
         </footer>
     );
 }

@@ -16,10 +16,10 @@ export default function Navbar() {
                 </div>
 
                 <nav className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
-                    <Link href="#" className="hover:text-blue-600 transition">
+                    <Link href="/" className="hover:text-blue-600 transition">
                         Home
                     </Link>
-                    <Link href="#" className="hover:text-blue-600 transition">
+                    <Link href="/about" className="hover:text-blue-600 transition">
                         About
                     </Link>
                     <Link href="#" className="hover:text-blue-600 transition">

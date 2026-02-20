@@ -1,7 +1,14 @@
-export default function FeatureCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
+export default function FeatureCard({
+    icon,
+    title,
+    description,
+}: {
+    icon: React.ReactNode;
+    title: string;
+    description: string;
+}) {
     return (
         <div className="bg-[#f3f3f3] p-6 flex items-center gap-5 hover:shadow-md transition duration-300">
-
             <div className="w-24 h-16 bg-blue-600 flex items-center justify-center">
                 {icon}
             </div>
