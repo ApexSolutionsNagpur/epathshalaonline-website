@@ -16,18 +16,19 @@ const CTASection = () => {
                 <path
                   d="M0,200 C120,200 80,0 200,0 L200,200 Z"
 
-                  fill="#0B3C5D"
+                  // fill="#0B3C5D"
+                  fill="white"
                 />
               </svg>
             </div>
-            <div className="hidden md:block absolute right-0 top-0 h-full w-[260px]">
+            {/* <div className="hidden md:block absolute right-0 top-0 h-full w-[260px]">
               <svg viewBox="0 0 200 200" preserveAspectRatio="none" className="w-full h-full">
                 <path
                   d="M0,200 C120,200 80,0 200,0 L200,200 Z"
                   fill="white"
                 />
               </svg>
-            </div>
+            </div> */}
 
             {/* ✅ ICON (BETTER POSITIONING) */}
             <div className="absolute left-10">
