@@ -6,6 +6,8 @@ import AcademicPrograms from './AcademicPrograms';
 import Stats from './Stats';
 import Testimonials from './Testimonials';
 import CTASection from './CTASection';
+import Header from './Header';
+import Footer from './Footer';
 
 const HomePageV2 = () => {
   return (

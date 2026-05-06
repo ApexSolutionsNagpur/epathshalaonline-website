@@ -11,7 +11,7 @@ const FeaturesRow = () => {
 
   return (
     <div className="bg-[#0B3C5D] py-4 relative z-20 shadow-xl border-y border-white/10 -mt-8">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-2">
         <div className="grid grid-cols-2 md:grid-cols-7 gap-6 items-center">
           {features.map((feature, index) => (
             <React.Fragment key={index}>

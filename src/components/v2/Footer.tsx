@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0B3C5D] text-white pt-16 pb-8 px-6">
+    <footer className="bg-[#0B3C5D] text-white pt-16 pb-8 px-14">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
         {/* Brand & Tagline */}
         <div className="space-y-4">
@@ -56,9 +56,9 @@ const Footer = () => {
           <h4 className="font-bold text-base mb-4 text-[#20C997]">Newsletter</h4>
           <p className="text-sm text-gray-300 mb-4">Stay updated with the latest news and exclusive offers.</p>
           <div className="flex">
-            <input 
-              type="email" 
-              placeholder="Enter your email" 
+            <input
+              type="email"
+              placeholder="Enter your email"
               className="w-full px-4 py-2 rounded-l-md bg-white/10 border border-white/20 text-white placeholder:text-gray-400 focus:outline-none focus:border-[#20C997]"
             />
             <button className="bg-[#FFC107] hover:bg-[#E0A800] text-[#1F2937] px-4 py-2 rounded-r-md font-bold transition-colors">
