@@ -11,6 +11,7 @@
   --font-heading: var(--font-poppins);
   --font-body: var(--font-inter);
   --font-sans: var(--font-inter);
+  --font-oswald: var(--font-oswald);
 }
 
 @media (prefers-color-scheme: dark) {
