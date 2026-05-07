@@ -6,17 +6,20 @@ const Hero = () => {
   const features = ['Discipline', 'Teamwork', 'Fitness', 'Focus', 'Confidence'];
 
   return (
-    <section className="relative overflow-hidden bg-white pt-10 pb-20">
+    <section
+      className="relative overflow-hidden pt-10 pb-20 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/images/sportsshala/SportHero.png')" }}
+    >
       <div className=" px-4 md:px-14 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side Content */}
         <div className="space-y-8 z-10">
           <div className="flex items-center gap-2">
             <Image
-              src="/images/sportsshala/logo.png"
+              src="/images/sportsshala/Sportlogo.png"
               alt="SportsShala Logo"
-              width={280}
-              height={120}
-              className="h-24 md:h-32 w-auto"
+              width={300}
+              height={50}
+              className="h-24 md:h-100 w-auto"
             />
           </div>
 
