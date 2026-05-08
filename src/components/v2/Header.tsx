@@ -16,15 +16,15 @@ const Header = () => {
 
   return (
     <header className="">
-      <div className="px-6 h-20 flex items-center justify-between">
+      <div className="px-6 h-25 flex items-center justify-between p-2">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/images/Logo.png"
             alt="ePathshala Logo"
             width={200}
-            height={100}
-            className="h-20 md:h-40 w-auto"
+            height={200}
+            className="h-20 md:h-60 w-auto"
             priority
           />
         </Link>

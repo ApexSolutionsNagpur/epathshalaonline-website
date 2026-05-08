@@ -1,19 +1,21 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className="bg-[#0B3C5D] text-white pt-16 pb-8 px-14">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
         {/* Brand & Tagline */}
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#1E5AA8] font-bold text-lg">
-              eP
-            </div>
-            <span className="font-bold text-xl tracking-tight">
-              ePathshala
-            </span>
+            <Image
+              src="/images/FooterLogo.png"
+              alt="ePathshala Logo"
+              width={200}
+              height={300}
+              className="h-10 md:h-24 w-auto object-contain"
+            />
           </div>
           <p className="text-sm text-gray-300">
             Learn. Grow. Succeed - Anytime, Anywhere.
@@ -75,4 +77,3 @@ const Footer = () => {
   );
 };
 
-export default Footer;
