@@ -35,7 +35,7 @@ const Hero = () => {
                 { icon: <Users className="w-6 h-6 text-[#0B3C5D]" />, title: "Personalized Mentorship" },
                 { icon: <Lightbulb className="w-6 h-6 text-[#0B3C5D]" />, title: "Future Ready Skills & Values" },
               ].map((card, i) => (
-                <div key={i} className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center text-center gap-3 hover:shadow-md transition-shadow">
+                <div key={i} className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center text-center gap-3 hover:shadow-md transition-shadow hover:scale-105 transition-all duration-300 ">
                   <div className="bg-gray-50 p-2 rounded-lg">
                     {card.icon}
                   </div>
