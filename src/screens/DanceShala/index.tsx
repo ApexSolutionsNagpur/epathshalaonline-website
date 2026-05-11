@@ -1,20 +1,23 @@
+'use client';
 import React from 'react';
 import HeroSection from './sections/HeroSection';
-import ExperienceSection from './sections/ExperienceSection';
+import FeatureStrip from './sections/FeatureStrip';
 import ProgramsSection from './sections/ProgramsSection';
-import WhyChooseSection from './sections/WhyChooseSection';
 import StatsSection from './sections/StatsSection';
+import WhyChooseSection from './sections/WhyChooseSection';
 import CTASection from '@/components/EnrollCTA/CTASection';
 
-export default function ArtShalaScreen() {
+const DanceShalaScreen = () => {
   return (
-    <div className="font-heading overflow-x-hidden selection:bg-pink-100 selection:text-[#ff4f87]">
+    <div className="font-body selection:bg-dance-peach selection:text-dance-orange">
       <HeroSection />
-      <ExperienceSection />
+      <FeatureStrip />
       <ProgramsSection />
-      <WhyChooseSection />
       <StatsSection />
+      <WhyChooseSection />
       <CTASection />
     </div>
   );
-}
+};
+
+export default DanceShalaScreen;

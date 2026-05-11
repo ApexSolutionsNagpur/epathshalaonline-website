@@ -8,6 +8,7 @@ const CTASection = () => {
   const isSportsShala = pathname === '/sportsshala';
   const isArtShala = pathname === '/artshala';
   const isAIRoboticsShala = pathname === '/airoboticsshala';
+  const isDanceShala = pathname === '/danceshala';
 
   // Define themes based on current route
   const themes = {
@@ -26,11 +27,11 @@ const CTASection = () => {
       label: "text-[#555555]"
     },
     art: {
-      gradient: "from-[#701a75] via-[#a21caf] to-[#ff4f87]",
-      accent: "text-[#ff4f87]",
-      button: "bg-[#ff4f87] text-white",
-      phone: "text-[#ff4f87]",
-      label: "text-[#701a75]"
+      gradient: "from-[#ff3f87] via-[#ff4f87] to-[#a21caf]",
+      accent: "text-[#a21caf]",
+      button: "bg-[#a21caf] text-white",
+      phone: "text-[#a21caf]",
+      label: "text-[#0B3C5D]"
     },
     robotics: {
       gradient: "from-[#072B61] via-[#0D6EFD] to-[#0047CC]",
@@ -38,10 +39,17 @@ const CTASection = () => {
       button: "bg-[#0D6EFD] text-white",
       phone: "text-[#0D6EFD]",
       label: "text-white/70"
+    },
+    danceshala: {
+      gradient: "from-[#FF7A00] via-[#FF8F1C] to-[#FF9F1C]] ",
+      accent: "text-[#a21caf]",
+      button: "bg-[#FF9F1C] text-white",
+      phone: "text-[#a21caf]",
+      label: "text-black"
     }
   };
 
-  const theme = isSportsShala ? themes.sports : isArtShala ? themes.art : isAIRoboticsShala ? themes.robotics : themes.default;
+  const theme = isSportsShala ? themes.sports : isArtShala ? themes.art : isAIRoboticsShala ? themes.robotics : isDanceShala ? themes.danceshala : themes.default;
   return (
     <section className="fixed bottom-0 left-0 right-0 z-50 md:relative md:bottom-auto py-0 md:py-12 md:px-14 bg-white md:bg-transparent shadow-[0_-10px_20px_rgba(0,0,0,0.1)] md:shadow-none">
       <div className="">
@@ -63,9 +71,9 @@ const CTASection = () => {
             </div>
 
             {/* ✅ ICON (BETTER POSITIONING) */}
-            <div className="absolute left-32 md:left-10">
-              <div className="w-12 h-12 md:w-20 md:h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-md border border-white/20">
-                <PhoneCall className={`w-4 h-4 md:w-6 md:h-6 ${theme.phone}`} />
+            <div className="absolute left-32 md:left-32">
+              <div className="w-12 h-12 md:w-30 md:h-30 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-md border border-white/20">
+                <PhoneCall className={`w-4 h-4 md:w-10 md:h-10 ${theme.phone}`} />
               </div>
             </div>
 

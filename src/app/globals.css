@@ -12,6 +12,21 @@
   --font-body: var(--font-inter);
   --font-sans: var(--font-inter);
   --font-oswald: var(--font-oswald);
+
+  /* DanceShala Colors */
+  --color-dance-orange: #FF7A00;
+  --color-dance-purple: #3B0A57;
+  --color-dance-royal: #5A189A;
+  --color-dance-peach: #FFF3E8;
+  --color-dance-gray: #F8F9FC;
+  --color-dance-text: #1A1A1A;
+  --color-dance-text-sec: #5B5B6B;
+  --color-dance-border: #ECECEC;
+
+  /* Gradients */
+  --background-image-gradient-orange: linear-gradient(to right, #FF7A00, #FF9F1C);
+  --background-image-gradient-purple: linear-gradient(to right, #3B0A57, #6A0DAD);
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -56,10 +71,13 @@ body {
 }
 
 @keyframes bounce-slow {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(-5%);
     animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
+
   50% {
     transform: translateY(0);
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
@@ -67,6 +85,11 @@ body {
 }
 
 @keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
