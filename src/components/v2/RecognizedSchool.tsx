@@ -4,7 +4,7 @@ import { Play } from 'lucide-react';
 
 const RecognizedSchool = () => {
   return (
-    <section className=" py-16 md:py-24 px-4 md:px-14 overflow-hidden relative">
+    <section className=" py-8 md:py-12 px-4 md:px-14 overflow-hidden relative">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#1E5AA8] rounded-full blur-3xl opacity-20 -mr-32 -mt-32"></div>
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#00A8A8] rounded-full blur-3xl opacity-20 -ml-32 -mb-32"></div>

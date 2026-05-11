@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const SuccessSection = () => {
   return (
-    <section className="py-16 md:py-24 px-4 md:px-28 bg-white overflow-hidden">
+    <section className="py-16 md:py-14 px-4 md:px-28 bg-white overflow-hidden">
       <div className=" mx-auto">
         {/* Top Header Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 mb-16 items-end">

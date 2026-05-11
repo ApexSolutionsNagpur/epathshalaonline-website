@@ -33,6 +33,8 @@ const Testimonials = () => {
   const settings = {
     dots: true,
     infinite: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
@@ -74,7 +76,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-24 px-4 md:px-14 bg-white overflow-hidden">
+    <section className="py-24 px-4 md:px-14 bg-white overflow-hidden max-md:mb-30">
       <div className="">
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-4xl font-extrabold text-[#0B3C5D] mb-4">
