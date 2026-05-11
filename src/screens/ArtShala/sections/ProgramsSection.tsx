@@ -7,37 +7,37 @@ const ProgramsSection = () => {
     {
       title: "SKETCHING",
       grades: "Grades 1 - 12",
-      image: "/images/artshala/programs-collage.png",
+      image: "/images/artshala/artshalalogo.png",
       bgColor: "bg-pink-50"
     },
     {
       title: "PAINTING",
       grades: "Grades 1 - 12",
-      image: "/images/artshala/programs-collage.png",
+      image: "/images/artshala/artshalalogo.png",
       bgColor: "bg-yellow-50"
     },
     {
       title: "DIGITAL ART",
       grades: "Grades 5 - 12",
-      image: "/images/artshala/programs-collage.png",
+      image: "/images/artshala/artshalalogo.png",
       bgColor: "bg-blue-50"
     },
     {
       title: "SCULPTURE & CLAY",
       grades: "Grades 5 - 12",
-      image: "/images/artshala/programs-collage.png",
+      image: "/images/artshala/artshalalogo.png",
       bgColor: "bg-green-50"
     },
     {
       title: "MANDALA & FOLK ART",
       grades: "Grades 1 - 12",
-      image: "/images/artshala/programs-collage.png",
+      image: "/images/artshala/artshalalogo.png",
       bgColor: "bg-orange-50"
     }
   ];
 
   return (
-    <section className="bg-white py-24 px-4 md:px-14">
+    <section className="bg-[#f3f3f3] py-18 px-4 md:px-14">
       <div className="">
         <div className="text-center mb-16 space-y-2">
           <h2 className="text-3xl md:text-4xl font-bold text-[#132c6b] font-heading uppercase tracking-wider">
@@ -48,13 +48,13 @@ const ProgramsSection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
           {programs.map((program, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`${program.bgColor} rounded-[25px] overflow-hidden shadow-sm hover:shadow-lg transition-all group border border-transparent hover:border-pink-200`}
             >
               <div className="h-48 relative overflow-hidden">
-                <Image 
-                  src={program.image} 
+                <Image
+                  src={program.image}
                   alt={program.title}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"

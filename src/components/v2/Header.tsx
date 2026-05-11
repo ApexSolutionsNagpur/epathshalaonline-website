@@ -7,7 +7,18 @@ import { usePathname } from 'next/navigation';
 
 const Header = () => {
   const pathname = usePathname();
+  const [isScrolled, setIsScrolled] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const isSportsShala = pathname === '/sportsshala';
+  const isAIRoboticsShala = pathname === '/airoboticsshala';
   const isArtShala = pathname === '/artshala';
 
   const navLinks = [
@@ -15,6 +26,7 @@ const Header = () => {
     { name: 'About Us', href: '#' },
     { name: 'Academics', href: '#' },
     { name: 'Programs', href: '#' },
+    { name: 'AI RoboticsShala', href: '/airoboticsshala' },
     { name: 'SportsShala', href: '/sportsshala' },
     { name: 'ArtShala', href: '/artshala' },
     { name: 'Admissions', href: '#' },
@@ -43,13 +55,11 @@ const Header = () => {
             <Link
               key={link.name}
               href={link.href}
-              className={`text-[#1F2937] font-body font-medium tracking-wide transition-colors ${
-                isSportsShala ? 'hover:text-[#95C11F]' : isArtShala ? 'hover:text-[#ff4f87]' : 'hover:text-[#1E5AA8]'
-              } ${
-                pathname === link.href 
-                  ? (isSportsShala ? 'text-[#95C11F] border-b-2 border-[#95C11F]' : isArtShala ? 'text-[#ff4f87] border-b-2 border-[#ff4f87]' : 'text-[#1E5AA8] border-b-2 border-[#1E5AA8]') 
+              className={`text-[#1F2937] font-body font-medium tracking-wide transition-colors ${isSportsShala ? 'hover:text-[#95C11F]' : isArtShala ? 'hover:text-[#ff4f87]' : isAIRoboticsShala ? 'hover:text-[#0D6EFD]' : 'hover:text-[#1E5AA8]'
+                } ${pathname === link.href
+                  ? (isSportsShala ? 'text-[#95C11F] border-b-2 border-[#95C11F]' : isArtShala ? 'text-[#ff4f87] border-b-2 border-[#ff4f87]' : isAIRoboticsShala ? 'text-[#0D6EFD] border-b-2 border-[#0D6EFD]' : 'text-[#1E5AA8] border-b-2 border-[#1E5AA8]')
                   : ''
-              }`}
+                }`}
             >
               {link.name}
             </Link>
@@ -59,7 +69,7 @@ const Header = () => {
         {/* Right Actions */}
         <div className="hidden md:flex items-center gap-6">
           <div className="flex flex-col items-end">
-            <div className={`flex items-center gap-2 ${isSportsShala ? 'text-[#062B5B]' : isArtShala ? 'text-[#ff4f87]' : 'text-[#1E5AA8]'}`}>
+            <div className={`flex items-center gap-2 ${isSportsShala ? 'text-[#062B5B]' : isArtShala ? 'text-[#ff4f87]' : isAIRoboticsShala ? 'text-[#0D6EFD]' : 'text-[#1E5AA8]'}`}>
               <Phone size={16} />
               <span className="font-body font-bold text-sm tracking-tight">+91 7887889306</span>
             </div>
@@ -67,13 +77,14 @@ const Header = () => {
           </div>
           <Link
             href="#"
-            className={`font-body font-bold py-2.5 px-6 rounded-full shadow-lg hover:scale-105 transition-all duration-300 ${
-              isSportsShala
-                ? 'bg-[#95C11F] hover:bg-[#84ac1b] text-white'
-                : isArtShala 
+            className={`font-body font-bold py-2.5 px-6 rounded-full shadow-lg hover:scale-105 transition-all duration-300 ${isSportsShala
+              ? 'bg-[#95C11F] hover:bg-[#84ac1b] text-white'
+              : isArtShala
                 ? 'bg-[#ff4f87] hover:bg-[#e64479] text-white'
-                : 'bg-[#FFC107] hover:bg-[#E0A800] text-[#1F2937]'
-            }`}
+                : isAIRoboticsShala
+                  ? 'bg-[#0D6EFD] hover:bg-[#0047CC] text-white'
+                  : 'bg-[#FFC107] hover:bg-[#E0A800] text-[#1F2937]'
+              }`}
           >
             ENROLL NOW
           </Link>

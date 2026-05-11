@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Inter, Poppins, Oswald } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/v2/Header";
-import Footer from "@/components/v2/Footer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Footer from "@/components/v2/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -40,8 +40,8 @@ export default function RootLayout({
       >
         <Header />
         {children}
-        <Footer />
-      </body>
-    </html>
+      <Footer />
+    </body>
+    </html >
   );
 }

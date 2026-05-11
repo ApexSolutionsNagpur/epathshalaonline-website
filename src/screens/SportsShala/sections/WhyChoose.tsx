@@ -12,14 +12,14 @@ const WhyChoose = () => {
   ];
 
   return (
-    <section className="bg-white py-32">
-      <div className=" px-4 md:px-14">
+    <section className="bg-white py-24">
+      <div className=" px-4 md:pr-14">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center">
           {/* Left: Equipment Graphic */}
           <div className="relative group">
             <div className="relative z-10 transition-transform duration-500 group-hover:-rotate-3">
               <Image
-                src="/images/sportsshala/equipment.png"
+                src="/images/sportsshala/sportshala_equipment.png"
                 alt="Sports Equipment"
                 width={500}
                 height={500}
@@ -32,7 +32,7 @@ const WhyChoose = () => {
           {/* Center: Video Thumbnail Card */}
           <div className="space-y-10">
             <div className="text-left">
-              <h2 className="font-oswald text-4xl font-bold text-[#062B5B] uppercase leading-tight mb-6">
+              <h2 className="font-oswald text-4xl font-bold text-[#062B5B] uppercase leading-tight mb-6 text-nowrap">
                 WHY CHOOSE <span className="text-[#95C11F]">SPORTSSHALA?</span>
               </h2>
               <ul className="space-y-4">

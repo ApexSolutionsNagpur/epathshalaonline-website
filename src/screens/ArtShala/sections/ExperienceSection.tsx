@@ -31,7 +31,7 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section className="bg-[#fff4f7] py-24 px-4 md:px-14">
+    <section className="bg-[#f3f3f3] py-24 px-4 md:px-14">
       <div className="">
         <div className="text-center mb-16 space-y-2">
           <h2 className="text-3xl md:text-4xl font-bold text-[#132c6b] font-heading uppercase tracking-wider">

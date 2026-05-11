@@ -9,11 +9,11 @@ import AcademicPrograms from './AcademicPrograms';
 import SuccessSection from './SuccessSection';
 import Stats from './Stats';
 import Testimonials from './Testimonials';
-import CTASection from './CTASection';
 import AdmissionsOpen from './AdmissionsOpen';
 import FacilitiesSection from './FacilitiesSection';
 import DemoClassModal from './DemoClassModal';
 import { useFirstScrollPopup } from '@/hooks/useFirstScrollPopup';
+import CTASection from '../EnrollCTA/CTASection';
 
 const HomePageV2 = () => {
   const { isOpen, closeModal } = useFirstScrollPopup(500);
