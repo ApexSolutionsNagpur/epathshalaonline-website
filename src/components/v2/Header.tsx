@@ -23,16 +23,16 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-white/95 backdrop-blur-sm border-b border-gray-100">
-      <div className="px-4 md:px-14 h-20 flex items-center justify-between">
+    <header className="">
+      <div className="px-6 h-25 flex items-center justify-between p-2">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/images/Logo.png"
             alt="ePathshala Logo"
             width={200}
-            height={100}
-            className="h-12 md:h-34 w-auto"
+            height={200}
+            className="h-20 md:h-60 w-auto"
             priority
           />
         </Link>
