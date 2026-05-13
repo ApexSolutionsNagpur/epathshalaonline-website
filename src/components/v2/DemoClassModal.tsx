@@ -118,10 +118,10 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
         if (isOpen) onClose();
       }, 3000);
 
-    } catch (error: any) {
+    } catch (error: unknown) {
       setSubmitStatus({
         type: 'error',
-        message: error.message || 'Something went wrong. Please try again.'
+        message: error instanceof Error ? error.message : 'Something went wrong. Please try again.'
       });
     } finally {
       setIsSubmitting(false);
@@ -173,8 +173,8 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
             className='object-cover h-full w-full'
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B3C5D]/80 to-transparent flex flex-col justify-end p-8 text-white">
-            <h3 className="text-3xl font-extrabold mb-2 font-heading uppercase">Shape Your Child's Future</h3>
-            <p className="text-white/80 font-body">Experience India's most recognized online school first-hand.</p>
+            <h3 className="text-3xl font-extrabold mb-2 font-heading uppercase">{"Shape Your Child's Future"}</h3>
+            <p className="text-white/80 font-body">{"Experience India's most recognized online school first-hand."}</p>
           </div>
         </div>
 

@@ -35,7 +35,7 @@ const ExperienceSection = () => {
       <div className="">
         <div className="text-center mb-16 space-y-2">
           <h2 className="text-3xl md:text-4xl font-bold text-[#132c6b] font-heading uppercase tracking-wider">
-            WHAT YOU'LL EXPERIENCE AT <span className="text-[#ff4f87]">ARTSHALA</span>
+            {"WHAT YOU'LL EXPERIENCE AT "} <span className="text-[#ff4f87]">ARTSHALA</span>
           </h2>
           <div className="w-24 h-1 bg-[#ff4f87] mx-auto rounded-full"></div>
         </div>

@@ -24,7 +24,7 @@ const FeaturesRow = () => {
               <div className="flex items-center gap-3 w-full">
                 <div className="bg-white/10 p-3 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300 border border-white/10 backdrop-blur-sm">
                   <div className="text-white">
-                    {React.cloneElement(feature.icon as React.ReactElement, {
+                    {React.cloneElement(feature.icon as React.ReactElement<{ className?: string }>, {
                       className: "w-6 h-6 md:w-8 md:h-8 text-white"
                     })}
                   </div>

@@ -13,7 +13,7 @@ const RecognizedSchool = () => {
         {/* Section Heading */}
         <div className="text-center mb-16 md:mb-20">
           <h2 className="text-3xl md:text-4xl lg:text-4xl font-extrabold text-black font-heading leading-tight max-w-4xl mx-auto text-[#0B3C5D] ">
-            Welcome to India's <span className="text-[#1E5AA8]">First & Only</span> Recognized Online School
+            {"Welcome to India's "} <span className="text-[#1E5AA8]">{"First & Only"}</span> {"Recognized Online School"}
           </h2>
           <div className="w-24 h-1.5 bg-[#FFC107] mx-auto mt-8 rounded-full"></div>
         </div>
