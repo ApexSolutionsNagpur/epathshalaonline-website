@@ -4,6 +4,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
+import DemoClassModal from './DemoClassModal';
 
 const CustomPrevArrow = (props: any) => {
   const { onClick } = props;
@@ -30,6 +31,7 @@ const CustomNextArrow = (props: any) => {
 };
 
 const Testimonials = () => {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
   const settings = {
     dots: true,
     infinite: true,
@@ -76,11 +78,11 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-24 px-4 md:px-14 bg-white overflow-hidden max-md:mb-30">
+    <section className="py-32 px-4 md:px-14 bg-white overflow-hidden max-md:mb-1">
       <div className="">
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-4xl font-extrabold text-[#0B3C5D] mb-4">
-            VOICES OF OUR PROUD <span className="text-[#00A8A8]">STUDENTS & PARENTS</span>
+            VOICES OF OUR PROUD <span className="text-[#1E5AA8]">STUDENTS & PARENTS</span>
           </h2>
           <div className="w-24 h-1 bg-[#FFC107] mx-auto mt-6 rounded-full"></div>
         </div>
@@ -136,12 +138,12 @@ const Testimonials = () => {
               </p>
             </div>
 
-            <Link
-              href="#"
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="relative z-10 bg-[#FFC107] hover:bg-[#E0A800] text-[#1F2937] font-bold py-4 px-8 rounded-xl shadow-lg hover:scale-105 transition-all duration-300 text-center block w-fit text-base"
             >
               ENROLL NOW
-            </Link>
+            </button>
           </div>
         </div>
       </div>
@@ -152,6 +154,7 @@ const Testimonials = () => {
           transform: scale(1.2);
         }
       `}} />
+      <DemoClassModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 };

@@ -13,7 +13,7 @@ const Stats = () => {
     <section className="bg-gradient-to-r from-[#0B3C5D] to-[#1E5AA8] py-8 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
       <div className=" px-4 md:px-14 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {stats.map((stat, index) => (
             <div key={index} className="flex items-center gap-6 p-6  transition-all duration-300">
               <div className="bg-white/20 p-4 rounded-full border border-[#20C997]">

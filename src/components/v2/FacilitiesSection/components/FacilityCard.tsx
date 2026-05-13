@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function FacilityCard({
     image,
@@ -6,15 +7,17 @@ export default function FacilityCard({
     description,
     overlay = false,
     defaultActive = false,
+    href,
 }: {
     image: string;
     title: string;
     description: string;
     overlay?: boolean;
     defaultActive?: boolean;
+    href: string;
 }) {
     return (
-        <div className="relative w-full h-[300px] md:h-[350px] overflow-hidden group">
+        <Link href={href} className="relative w-full h-[300px] md:h-[350px] overflow-hidden group rounded-3xl">
 
             {/* Image */}
             <Image
@@ -46,6 +49,6 @@ export default function FacilityCard({
                     </p>
                 </div>
             )}
-        </div>
+        </Link>
     );
 }

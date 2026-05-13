@@ -14,7 +14,7 @@ const Footer = () => {
 
 
   return (
-    <footer className={`${isSportsShala ? 'bg-[#062B5B]' : isAIRoboticsShala ? 'bg-[#072B61]' : isDanceShala ? 'bg-[#3B0A57]' : isArtShala ? 'bg-[#701a75]' : 'bg-[#0B3C5D]'} text-white pt-16 pb-8 px-6 md:px-14 transition-colors`}>
+    <footer className={`${isSportsShala ? 'bg-[#062B5B]' : isAIRoboticsShala ? 'bg-[#072B61]' : isDanceShala ? 'bg-[#3B0A57]' : isArtShala ? 'bg-[#701a75]' : 'bg-[#0B3C5D]'} text-white pt-16 pb-8 px-6 md:px-14 transition-colors max-md:hidden`}>
 
       <div className=" grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
         {/* Brand & Tagline */}
@@ -33,7 +33,7 @@ const Footer = () => {
             Learn. Grow. Succeed - Anytime, Anywhere.
           </p>
           <div className="flex gap-4 pt-2">
-            {[FaFacebookF, FaLinkedinIn, FaTwitter, FaInstagram].map((Icon, i) => (
+            {[FaFacebookF, FaInstagram].map((Icon, i) => (
               <div key={i} className={`w-8 h-8 rounded-full flex items-center justify-center hover:scale-110 cursor-pointer transition-all ${isSportsShala ? 'bg-[#95C11F]' : isDanceShala ? 'bg-[#FF7A00]' : isArtShala ? 'bg-[#a21caf]' : 'bg-[#1E5AA8]'}`}>
 
                 <Icon size={16} />

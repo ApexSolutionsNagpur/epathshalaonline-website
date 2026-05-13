@@ -38,7 +38,7 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
   if (!isMounted || !isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[100] flex items-end md:items-center justify-center p-0 md:p-4">
       {/* Overlay */}
       <div
         className="absolute inset-0 bg-[#0B3C5D]/60 backdrop-blur-sm transition-opacity duration-300"
@@ -46,12 +46,12 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
       />
 
       {/* Modal Container */}
-      <div className="relative w-full max-w-5xl bg-white rounded-[2rem] overflow-hidden shadow-2xl flex flex-col md:flex-row transform transition-all duration-300 scale-100 animate-in fade-in zoom-in-95">
+      <div className="relative w-full max-w-5xl bg-white rounded-t-[2.5rem] md:rounded-[2rem] overflow-hidden shadow-2xl flex flex-col md:flex-row transform transition-all duration-500 ease-out animate-in slide-in-from-bottom md:slide-in-from-none md:zoom-in-95 md:fade-in">
 
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-700 transition-colors"
+          className="absolute top-4 right-6 md:right-4 z-10 p-2 rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-700 transition-colors"
         >
           <X size={24} />
         </button>
@@ -73,43 +73,47 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
 
         {/* Right Side: Form */}
         <div className="w-full md:w-[55%] p-4 md:p-6 overflow-y-auto max-h-[90vh]">
-          <div className="text-center mb-4">
+          <div className="text-center mb-6 pt-4 md:pt-0">
+            <div className="w-12 h-1.5 bg-gray-200 rounded-full mx-auto mb-4 md:hidden"></div>
             <h2 className="text-[#0B3C5D] font-heading text-2xl md:text-3xl font-extrabold uppercase tracking-tight">
-              BOOK A FREE DEMO CLASS
+              Student Enrollment Form
             </h2>
           </div>
 
           <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-            {/* Programme */}
-            <div className="space-y-1.5">
-              <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Programme*</label>
-              <div className="relative group">
-                <select className="w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium appearance-none focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all">
-                  <option value="">Select Programme</option>
-                  <option value="cbse">CBSE Academic</option>
-                  <option value="jee">JEE & NEET Foundation</option>
-                  <option value="stem">STEM & Coding</option>
-                </select>
-                <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#1E5AA8]" size={18} />
-              </div>
-            </div>
 
-            {/* Grade */}
-            <div className="space-y-1.5">
-              <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Grade*</label>
-              <div className="relative group">
-                <select className="w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium appearance-none focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all">
-                  <option value="">Select Grade</option>
-                  <option value="1">Grade 1</option>
-                  <option value="2">Grade 2</option>
-                  <option value="3">Grade 3</option>
-                  <option value="4">Grade 4</option>
-                  <option value="5">Grade 5</option>
-                  <option value="6">Grade 6</option>
-                  <option value="7">Grade 7</option>
-                  <option value="8">Grade 8</option>
-                </select>
-                <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#1E5AA8]" size={18} />
+            <div className='flex gap-2 w-full'>
+              {/* Programme */}
+              <div className="space-y-1.5 w-full">
+                <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Programme*</label>
+                <div className="relative group">
+                  <select className="w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium appearance-none focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all">
+                    <option value="">Select Programme</option>
+                    <option value="cbse">CBSE Academic</option>
+                    <option value="jee">JEE & NEET Foundation</option>
+                    <option value="stem">STEM & Coding</option>
+                  </select>
+                  <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#1E5AA8]" size={18} />
+                </div>
+              </div>
+
+              {/* Grade */}
+              <div className="space-y-1.5  w-full">
+                <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Grade*</label>
+                <div className="relative group">
+                  <select className="w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium appearance-none focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all">
+                    <option value="">Select Grade</option>
+                    <option value="1">Grade 1</option>
+                    <option value="2">Grade 2</option>
+                    <option value="3">Grade 3</option>
+                    <option value="4">Grade 4</option>
+                    <option value="5">Grade 5</option>
+                    <option value="6">Grade 6</option>
+                    <option value="7">Grade 7</option>
+                    <option value="8">Grade 8</option>
+                  </select>
+                  <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#1E5AA8]" size={18} />
+                </div>
               </div>
             </div>
 

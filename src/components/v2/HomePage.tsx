@@ -14,6 +14,7 @@ import FacilitiesSection from './FacilitiesSection';
 import DemoClassModal from './DemoClassModal';
 import { useFirstScrollPopup } from '@/hooks/useFirstScrollPopup';
 import CTASection from '../EnrollCTA/CTASection';
+import WhatsAppButton from './WhatsAppButton';
 
 const HomePageV2 = () => {
   const { isOpen, closeModal } = useFirstScrollPopup(500);
@@ -23,17 +24,19 @@ const HomePageV2 = () => {
       <main>
         <Hero />
         <FeaturesRow />
+
         <DiscoverExcellence />
-        <AcademicPrograms />
         <AdmissionsOpen />
         <RecognizedSchool />
         <SuccessSection />
+        <AcademicPrograms />
         <FacilitiesSection />
         <Stats />
         <Testimonials />
         <CTASection />
       </main>
 
+      <WhatsAppButton />
       <DemoClassModal isOpen={isOpen} onClose={closeModal} />
     </div>
   );
