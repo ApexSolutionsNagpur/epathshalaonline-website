@@ -1,14 +1,26 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Poppins, Oswald } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/EnvatoHeader";
-import Footer from "@/components/Footer";
+import Header from "@/components/v2/Header";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Footer from "@/components/v2/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+});
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const oswald = Oswald({
+  variable: "--font-oswald",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -24,12 +36,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} antialiased font-sans`}
+        className={`${inter.variable} ${poppins.variable} ${oswald.variable} antialiased font-body`}
       >
         <Header />
         {children}
-        <Footer />
-      </body>
-    </html>
+      <Footer />
+    </body>
+    </html >
   );
 }
