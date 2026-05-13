@@ -26,7 +26,7 @@ const SuccessSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
           {/* Left Column - Large Vertical Image */}
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-7">
             <div className="relative rounded-2xl overflow-hidden shadow-xl h-full min-h-[350px] md:min-h-[500px] group">
               <Image
                 src="/images/studentwinimg.png"
@@ -39,7 +39,7 @@ const SuccessSection = () => {
           </div>
 
           {/* Right Column - Image + Vision/Mission Cards */}
-          <div className="lg:col-span-6 flex flex-col gap-8">
+          <div className="lg:col-span-5 flex flex-col gap-8">
 
             {/* Top Horizontal Image */}
             <div className="relative rounded-2xl overflow-hidden shadow-xl h-[250px] md:h-[450px] group">

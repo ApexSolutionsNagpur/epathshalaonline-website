@@ -6,7 +6,7 @@ import { Video, Clock, Users, Lightbulb, GraduationCap } from 'lucide-react';
 const Hero = () => {
   return (
     <section
-      className="relative bg-[#F5F7FA] overflow-hidden py-4.5 bg-cover bg-center bg-no-repeat"
+      className="relative bg-[#F5F7FA] overflow-hidden py-8 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/images/HeroSection.png')" }}
     >
       <div className=" px-4 md:px-14 py-8 md:py-16">

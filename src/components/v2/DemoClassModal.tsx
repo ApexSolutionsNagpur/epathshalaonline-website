@@ -40,16 +40,16 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       {/* Overlay */}
-      <div 
+      <div
         className="absolute inset-0 bg-[#0B3C5D]/60 backdrop-blur-sm transition-opacity duration-300"
         onClick={onClose}
       />
-      
+
       {/* Modal Container */}
       <div className="relative w-full max-w-5xl bg-white rounded-[2rem] overflow-hidden shadow-2xl flex flex-col md:flex-row transform transition-all duration-300 scale-100 animate-in fade-in zoom-in-95">
-        
+
         {/* Close Button */}
-        <button 
+        <button
           onClick={onClose}
           className="absolute top-4 right-4 z-10 p-2 rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-700 transition-colors"
         >
@@ -59,10 +59,11 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
         {/* Left Side: Promotional Image */}
         <div className="hidden md:block md:w-[45%] relative min-h-[600px]">
           <Image
-            src="/images/getstart.jpg" // Using an existing project image
+            src="/images/modelimage.png" // Using an existing project image
             alt="Demo Class Promotion"
-            fill
-            className="object-cover"
+            width={500}
+            height={500}
+            className='object-cover h-full w-full'
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B3C5D]/80 to-transparent flex flex-col justify-end p-8 text-white">
             <h3 className="text-3xl font-extrabold mb-2 font-heading uppercase">Shape Your Child's Future</h3>
@@ -71,8 +72,8 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         {/* Right Side: Form */}
-        <div className="w-full md:w-[55%] p-8 md:p-12 overflow-y-auto max-h-[90vh]">
-          <div className="text-center mb-8">
+        <div className="w-full md:w-[55%] p-4 md:p-6 overflow-y-auto max-h-[90vh]">
+          <div className="text-center mb-4">
             <h2 className="text-[#0B3C5D] font-heading text-2xl md:text-3xl font-extrabold uppercase tracking-tight">
               BOOK A FREE DEMO CLASS
             </h2>
@@ -83,7 +84,7 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
             <div className="space-y-1.5">
               <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Programme*</label>
               <div className="relative group">
-                <select className="w-full h-14 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium appearance-none focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all">
+                <select className="w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium appearance-none focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all">
                   <option value="">Select Programme</option>
                   <option value="cbse">CBSE Academic</option>
                   <option value="jee">JEE & NEET Foundation</option>
@@ -97,7 +98,7 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
             <div className="space-y-1.5">
               <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Grade*</label>
               <div className="relative group">
-                <select className="w-full h-14 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium appearance-none focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all">
+                <select className="w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium appearance-none focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all">
                   <option value="">Select Grade</option>
                   <option value="1">Grade 1</option>
                   <option value="2">Grade 2</option>
@@ -115,30 +116,30 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
             {/* Student Name */}
             <div className="space-y-1.5">
               <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Student Name*</label>
-              <input 
-                type="text" 
-                placeholder="Student's Full Name" 
-                className="w-full h-14 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all"
+              <input
+                type="text"
+                placeholder="Student's Full Name"
+                className="w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all"
               />
             </div>
 
             {/* Parent Name */}
             <div className="space-y-1.5">
               <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Parent Name*</label>
-              <input 
-                type="text" 
-                placeholder="Parent's Full Name" 
-                className="w-full h-14 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all"
+              <input
+                type="text"
+                placeholder="Parent's Full Name"
+                className="w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all"
               />
             </div>
 
             {/* Email Address */}
             <div className="space-y-1.5">
               <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Email Address*</label>
-              <input 
-                type="email" 
-                placeholder="Email Address" 
-                className="w-full h-14 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all"
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all"
               />
             </div>
 
@@ -146,26 +147,26 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
             <div className="flex gap-3">
               <div className="w-[80px] space-y-1.5">
                 <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Code</label>
-                <div className="h-14 flex items-center justify-center rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-bold">
+                <div className="h-12 flex items-center justify-center rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-bold">
                   +91
                 </div>
               </div>
               <div className="flex-1 space-y-1.5">
                 <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Phone Number*</label>
-                <input 
-                  type="tel" 
-                  placeholder="Phone Number" 
-                  className="w-full h-14 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all"
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  className="w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all"
                 />
               </div>
             </div>
 
             {/* Authorization */}
-            <div className="flex items-start gap-3 py-2">
-              <input 
-                type="checkbox" 
-                id="auth" 
-                className="mt-1 w-5 h-5 rounded-md border-gray-300 text-[#1E5AA8] focus:ring-[#1E5AA8]/20" 
+            <div className="flex items-center gap-3 py-2">
+              <input
+                type="checkbox"
+                id="auth"
+                className="mt-1 w-5 h-5 rounded-md border-gray-300 text-[#1E5AA8] focus:ring-[#1E5AA8]/20"
                 defaultChecked
               />
               <label htmlFor="auth" className="text-xs text-gray-500 leading-normal">
