@@ -47,7 +47,11 @@ const Header = () => {
   ];
 
   return (
-    <header className={` w-full bg-white`}>
+    <header 
+      className={`sticky top-0 left-0 w-full z-[100] bg-white transition-all duration-300 ${
+        isScrolled ? 'shadow-lg py-1' : 'shadow-none py-2'
+      }`}
+    >
 
       <div className="px-6 h-25 flex items-center justify-between p-2">
         {/* Logo */}
