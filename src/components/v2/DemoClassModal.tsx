@@ -1,8 +1,7 @@
-"use client";
-
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { X, ChevronDown, ArrowRight } from 'lucide-react';
+import { X, ChevronDown, ArrowRight, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import { captureLead } from '@/services/leadService';
 
 interface DemoClassModalProps {
   isOpen: boolean;
@@ -11,6 +10,21 @@ interface DemoClassModalProps {
 
 const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
   const [isMounted, setIsMounted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+
+  const [formData, setFormData] = useState({
+    programme: '',
+    grade: '',
+    studentName: '',
+    parentName: '',
+    email: '',
+    phone: '',
+    city: '',
+    authorize: true
+  });
+
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   useEffect(() => {
     setIsMounted(true);
@@ -19,6 +33,7 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      setSubmitStatus(null);
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -34,6 +49,98 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
     window.addEventListener('keydown', handleEsc);
     return () => window.removeEventListener('keydown', handleEsc);
   }, [onClose]);
+
+  const validate = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!formData.programme) newErrors.programme = 'Programme is required';
+    if (!formData.grade) newErrors.grade = 'Grade is required';
+    if (!formData.studentName.trim()) newErrors.studentName = 'Student name is required';
+    if (!formData.parentName.trim()) newErrors.parentName = 'Parent name is required';
+    if (!formData.city.trim()) newErrors.city = 'City is required';
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Invalid email format';
+    }
+
+    const phoneDigits = formData.phone.replace(/\D/g, '');
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone number is required';
+    } else if (phoneDigits.length !== 10) {
+      newErrors.phone = 'Phone number must be exactly 10 digits';
+    } else if (!/^[6-9]\d{9}$/.test(phoneDigits)) {
+      newErrors.phone = 'Invalid Indian mobile number';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitStatus(null);
+
+    if (!validate()) return;
+
+    setIsSubmitting(true);
+    try {
+      await captureLead({
+        tenant_slug: 'ppp',
+        form_id: 2,
+        student_first_name: formData.studentName.trim(),
+        parent_first_name: formData.parentName.trim(),
+        phone: formData.phone.trim(),
+        email: formData.email.trim(),
+        grade_level: formData.grade,
+        city: formData.city.trim(),
+        source: typeof window !== 'undefined' ? window.location.href : ''
+      });
+
+      setSubmitStatus({
+        type: 'success',
+        message: 'Your request has been submitted successfully!'
+      });
+
+      setFormData({
+        programme: '',
+        grade: '',
+        studentName: '',
+        parentName: '',
+        email: '',
+        phone: '',
+        city: '',
+        authorize: true
+      });
+
+      setTimeout(() => {
+        if (isOpen) onClose();
+      }, 3000);
+
+    } catch (error: any) {
+      setSubmitStatus({
+        type: 'error',
+        message: error.message || 'Something went wrong. Please try again.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target;
+    const val = type === 'checkbox' ? (e.target as HTMLInputElement).checked : value;
+
+    setFormData(prev => ({ ...prev, [name]: val }));
+    if (errors[name]) {
+      setErrors(prev => {
+        const newErrs = { ...prev };
+        delete newErrs[name];
+        return newErrs;
+      });
+    }
+  };
 
   if (!isMounted || !isOpen) return null;
 
@@ -80,14 +187,27 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
             </h2>
           </div>
 
-          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+          {submitStatus && (
+            <div className={`mb-6 p-4 rounded-2xl flex items-start gap-3 animate-in fade-in slide-in-from-top-2 ${submitStatus.type === 'success' ? 'bg-green-50 text-green-700 border border-green-100' : 'bg-red-50 text-red-700 border border-red-100'
+              }`}>
+              {submitStatus.type === 'success' ? <CheckCircle className="w-5 h-5 shrink-0" /> : <AlertCircle className="w-5 h-5 shrink-0" />}
+              <p className="text-sm font-medium">{submitStatus.message}</p>
+            </div>
+          )}
+
+          <form className="space-y-4" onSubmit={handleSubmit}>
 
             <div className='flex gap-2 w-full'>
               {/* Programme */}
               <div className="space-y-1.5 w-full">
                 <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Programme*</label>
                 <div className="relative group">
-                  <select className="w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium appearance-none focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all">
+                  <select
+                    name="programme"
+                    value={formData.programme}
+                    onChange={handleChange}
+                    className={`w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border ${errors.programme ? 'border-red-300' : 'border-gray-100'} text-[#1F2937] font-medium appearance-none focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all`}
+                  >
                     <option value="">Select Programme</option>
                     <option value="cbse">CBSE Academic</option>
                     <option value="jee">JEE & NEET Foundation</option>
@@ -95,13 +215,19 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
                   </select>
                   <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#1E5AA8]" size={18} />
                 </div>
+                {errors.programme && <p className="text-[10px] text-red-500 ml-1">{errors.programme}</p>}
               </div>
 
               {/* Grade */}
               <div className="space-y-1.5  w-full">
                 <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Grade*</label>
                 <div className="relative group">
-                  <select className="w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium appearance-none focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all">
+                  <select
+                    name="grade"
+                    value={formData.grade}
+                    onChange={handleChange}
+                    className={`w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border ${errors.grade ? 'border-red-300' : 'border-gray-100'} text-[#1F2937] font-medium appearance-none focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all`}
+                  >
                     <option value="">Select Grade</option>
                     <option value="1">Grade 1</option>
                     <option value="2">Grade 2</option>
@@ -114,6 +240,7 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
                   </select>
                   <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#1E5AA8]" size={18} />
                 </div>
+                {errors.grade && <p className="text-[10px] text-red-500 ml-1">{errors.grade}</p>}
               </div>
             </div>
 
@@ -122,9 +249,13 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
               <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Student Name*</label>
               <input
                 type="text"
+                name="studentName"
+                value={formData.studentName}
+                onChange={handleChange}
                 placeholder="Student's Full Name"
-                className="w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all"
+                className={`w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border ${errors.studentName ? 'border-red-300' : 'border-gray-100'} text-[#1F2937] font-medium placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all`}
               />
+              {errors.studentName && <p className="text-[10px] text-red-500 ml-1">{errors.studentName}</p>}
             </div>
 
             {/* Parent Name */}
@@ -132,19 +263,43 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
               <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Parent Name*</label>
               <input
                 type="text"
+                name="parentName"
+                value={formData.parentName}
+                onChange={handleChange}
                 placeholder="Parent's Full Name"
-                className="w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all"
+                className={`w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border ${errors.parentName ? 'border-red-300' : 'border-gray-100'} text-[#1F2937] font-medium placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all`}
               />
+              {errors.parentName && <p className="text-[10px] text-red-500 ml-1">{errors.parentName}</p>}
             </div>
 
-            {/* Email Address */}
-            <div className="space-y-1.5">
-              <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Email Address*</label>
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all"
-              />
+            <div className='flex gap-2 w-full'>
+              {/* Email Address */}
+              <div className="space-y-1.5 w-full">
+                <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Email Address*</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Email Address"
+                  className={`w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border ${errors.email ? 'border-red-300' : 'border-gray-100'} text-[#1F2937] font-medium placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all`}
+                />
+                {errors.email && <p className="text-[10px] text-red-500 ml-1">{errors.email}</p>}
+              </div>
+
+              {/* City */}
+              <div className="space-y-1.5 w-full">
+                <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">City*</label>
+                <input
+                  type="text"
+                  name="city"
+                  value={formData.city}
+                  onChange={handleChange}
+                  placeholder="City"
+                  className={`w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border ${errors.city ? 'border-red-300' : 'border-gray-100'} text-[#1F2937] font-medium placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all`}
+                />
+                {errors.city && <p className="text-[10px] text-red-500 ml-1">{errors.city}</p>}
+              </div>
             </div>
 
             {/* Phone Number */}
@@ -159,9 +314,14 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
                 <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Phone Number*</label>
                 <input
                   type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   placeholder="Phone Number"
-                  className="w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-medium placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all"
+                  maxLength={10}
+                  className={`w-full h-12 px-5 rounded-2xl bg-[#F8F9FA] border ${errors.phone ? 'border-red-300' : 'border-gray-100'} text-[#1F2937] font-medium placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all`}
                 />
+                {errors.phone && <p className="text-[10px] text-red-500 ml-1">{errors.phone}</p>}
               </div>
             </div>
 
@@ -170,8 +330,10 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
               <input
                 type="checkbox"
                 id="auth"
+                name="authorize"
+                checked={formData.authorize}
+                onChange={handleChange}
                 className="mt-1 w-5 h-5 rounded-md border-gray-300 text-[#1E5AA8] focus:ring-[#1E5AA8]/20"
-                defaultChecked
               />
               <label htmlFor="auth" className="text-xs text-gray-500 leading-normal">
                 I authorize ePathshala to contact me. This overrides DND.
@@ -179,8 +341,21 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
             </div>
 
             {/* Submit Button */}
-            <button className="w-full bg-[#FFC107] hover:bg-[#E0A800] text-[#1F2937] font-extrabold py-5 rounded-2xl shadow-lg transform hover:scale-[1.02] transition-all flex items-center justify-center gap-3 group mt-4 uppercase">
-              SUBMIT REQUEST <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className={`w-full ${isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#FFC107] hover:bg-[#E0A800]'} text-[#1F2937] font-extrabold py-5 rounded-2xl shadow-lg transform ${!isSubmitting && 'hover:scale-[1.02]'} transition-all flex items-center justify-center gap-3 group mt-4 uppercase`}
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="animate-spin" size={20} />
+                  SUBMITTING...
+                </>
+              ) : (
+                <>
+                  SUBMIT REQUEST <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                </>
+              )}
             </button>
 
             {/* Privacy Policy */}

@@ -17,14 +17,14 @@ export default function FacilityCard({
     href: string;
 }) {
     return (
-        <Link href={href} className="relative w-full h-[300px] md:h-[350px] overflow-hidden group rounded-3xl">
+        <Link href={href} className="relative w-full h-[300px] md:h-[350px] overflow-hidden group rounded-3xl shadow-xl hover:scale-102 hover:-translate-y-2 transition-all duration-300 ">
 
             {/* Image */}
             <Image
                 src={image}
                 alt={title || "facility"}
                 fill
-                className="object-cover "
+                className="object-fit "
             />
 
             {overlay && (
