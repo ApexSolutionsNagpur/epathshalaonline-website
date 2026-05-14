@@ -37,9 +37,9 @@ const CTASection = () => {
     },
     robotics: {
       gradient: "from-[#072B61] via-[#0D6EFD] to-[#0047CC]",
-      accent: "text-blue-300",
-      button: "bg-[#0D6EFD] text-white",
-      phone: "text-[#0D6EFD]",
+      accent: "text-[#072B61]",
+      button: "bg-[#072B61] text-white",
+      phone: "text-white",
       label: "text-white/70"
     },
     danceshala: {

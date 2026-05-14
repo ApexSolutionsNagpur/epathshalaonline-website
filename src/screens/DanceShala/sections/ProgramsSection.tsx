@@ -9,7 +9,7 @@ const ProgramsSection = () => {
       title: 'HIP HOP',
       desc: 'High energy moves that build style, rhythm and confidence.',
       grades: 'Grades 1 - 12',
-      image: '/images/danceshala/hiphop.png',
+      image: '/images/danceshala/hip_hop.png',
       icon: <IoFlash className="w-6 h-6" />,
       color: 'bg-purple-600',
     },
@@ -49,7 +49,7 @@ const ProgramsSection = () => {
       title: 'KIDS DANCE',
       desc: 'Fun-filled sessions to develop coordination, rhythm & joy.',
       grades: 'Ages 4 - 10',
-      image: '/images/danceshala/kids.png',
+      image: '/images/danceshala/childrendance.png',
       iconComp: <IoPeople className="w-6 h-6" />,
       color: 'bg-orange-400',
     },
@@ -70,24 +70,26 @@ const ProgramsSection = () => {
               key={idx}
               className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition-all duration-300 flex flex-col"
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-60 overflow-hidden">
                 <Image
                   src={prog.image}
                   alt={prog.title}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className={`absolute bottom-4 left-4 p-2 rounded-xl text-white shadow-lg ${prog.color}`}>
+                {/* <div className={`absolute bottom-4 left-4 p-2 rounded-xl text-white shadow-lg ${prog.color}`}>
                   {prog.icon || prog.iconComp}
-                </div>
+                </div> */}
               </div>
-              <div className="p-5 flex-grow">
-                <h3 className="text-lg font-bold text-dance-purple mb-2 uppercase tracking-tight">
-                  {prog.title}
-                </h3>
-                <p className="text-dance-text-sec text-xs leading-relaxed mb-4">
-                  {prog.desc}
-                </p>
+              <div className="p-5 flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-bold text-dance-purple mb-2 uppercase tracking-tight">
+                    {prog.title}
+                  </h3>
+                  <p className="text-dance-text-sec text-xs leading-relaxed mb-4">
+                    {prog.desc}
+                  </p>
+                </div>
                 <div className="mt-auto">
                   <p className="text-[10px] font-bold text-dance-orange uppercase bg-dance-peach inline-block px-3 py-1 rounded-full">
                     {prog.grades}

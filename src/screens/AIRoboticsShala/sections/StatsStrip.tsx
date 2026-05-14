@@ -17,7 +17,7 @@ const StatsStrip = () => {
         <div className="bg-[#072B61] rounded-[3rem] py-10 px-8 relative overflow-hidden shadow-2xl">
           {/* Subtle gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-transparent to-blue-500/20 pointer-events-none"></div>
-          
+
           <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {stats.map((stat, i) => (
               <div key={i} className="flex flex-col items-center text-center space-y-3 group">

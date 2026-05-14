@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section
       className="relative overflow-hidden pt-10 pb-20 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/images/sportsshala/SportHero.png')" }}
+      style={{ backgroundImage: "url('/images/sportsshala/sport_hero.png')" }}
     >
       <div className=" px-4 md:px-14 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side Content */}
@@ -26,7 +26,7 @@ const Hero = () => {
           <div className="space-y-2">
             <h1 className="font-oswald text-6xl md:text-8xl font-bold leading-tight text-[#062B5B] uppercase italic">
               PLAY TODAY. <br />
-              <span className="text-[#95C11F] not-italic">LEAD TOMORROW.</span>
+              <span className="">LEAD TOMORROW.</span>
             </h1>
             <p className="font-body text-lg text-gray-600 max-w-lg leading-relaxed font-medium">
               SportsShala is the perfect arena for young champions to train, compete and excel in their favorite sports.
@@ -34,10 +34,10 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <button className="bg-[#95C11F] hover:bg-[#84ac1b] text-white font-oswald font-bold py-4 px-8 rounded-lg shadow-xl hover:scale-105 transition-all text-lg uppercase tracking-wider">
+            <button className="bg-[#062B5B] hover:bg-[#84ac1b] text-white font-oswald font-bold py-4 px-8 rounded-lg shadow-xl hover:scale-105 transition-all text-lg uppercase tracking-wider">
               Explore Programs
             </button>
-            <button className="border-2 border-[#95C11F] text-[#95C11F] hover:bg-[#95C11F] hover:text-white font-oswald font-bold py-4 px-8 rounded-lg hover:scale-105 transition-all text-lg uppercase tracking-wider">
+            <button className="border-2 border-[#062B5B] text-[#062B5B] hover:bg-[#95C11F] hover:border-[#95C11F] hover:text-white font-oswald font-bold py-4 px-8 rounded-lg hover:scale-105 transition-all text-lg uppercase tracking-wider">
               Join Sports Community
             </button>
           </div>
@@ -57,7 +57,7 @@ const Hero = () => {
           </div>
 
           {/* Vertical Feature List */}
-          <div className="absolute top-1/2 -right-4 md:-right-8 -translate-y-1/2 flex flex-col gap-4 z-20">
+          <div className="absolute top-1/2 -right-4 md:-right-8 -translate-y-2/3 flex flex-col gap-4 z-20">
             {features.map((feature, index) => (
               <div
                 key={feature}

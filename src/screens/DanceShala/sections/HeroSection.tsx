@@ -14,24 +14,26 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden bg-white">
+    <section
+      className="relative pt-32 pb-20 overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/images/danceshala/dancehero.png')" }}
+    >
       {/* Background Splashes */}
       <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-dance-orange/5 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[500px] h-[500px] bg-dance-purple/5 rounded-full blur-3xl -z-10" />
 
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center">
+      <div className=" mx-auto pl-24 pr-20">
+        <div className="flex flex-col md:flex-row items-center justify-between">
           {/* Left Content */}
-          <div className="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
+          <div className="text-center lg:text-left mb-12 lg:mb-0">
             <div className="inline-block mb-10 relative group">
               {/* Outer Decorative Rings */}
               <div className="absolute inset-0 bg-dance-orange/20 rounded-full scale-110 blur-xl group-hover:scale-125 transition-transform duration-700" />
               <div className="absolute inset-0 border-4 border-dashed border-dance-orange/30 rounded-full animate-spin-slow" />
-              
+
               <div className="relative w-48 h-48 bg-dance-orange rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
                 {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none" />
-                
+
                 <div className="text-white text-center relative z-10 px-4">
                   <div className="flex justify-center mb-1">
                     <Sparkles className="w-8 h-8 text-yellow-300 animate-pulse" />
@@ -80,30 +82,19 @@ const HeroSection = () => {
           </div>
 
           {/* Right Content: Dancers & Features */}
-          <div className="lg:w-1/2 relative">
-            <div className="relative z-10">
-              <Image
-                src="/images/danceshala/hero-dancers.png"
-                alt="DanceShala Dancers"
-                width={700}
-                height={700}
-                className="w-full h-auto object-contain pointer-events-none drop-shadow-2xl"
-                priority
-              />
-            </div>
-
+          <div className=" relative">
             {/* Floating Features */}
             <div className="absolute top-1/2 right-0 -translate-y-1/2 flex flex-col space-y-3 z-20">
               {features.map((feature, idx) => (
                 <div
                   key={idx}
-                  className="bg-white/90 backdrop-blur-sm border border-gray-100 p-2 pr-4 rounded-full shadow-lg flex items-center space-x-3 transform hover:scale-105 transition-all cursor-default"
-                  style={{ marginLeft: `${idx * 15}px` }}
+                  className="p-2 pr-4 rounded-full flex items-center space-x-3 5 transition-all cursor-default"
+
                 >
-                  <div className="bg-dance-orange p-1.5 rounded-full text-white">
+                  <div className="bg-white p-1.5 rounded-full text-dance-orange">
                     {feature.icon}
                   </div>
-                  <span className="text-[10px] font-bold text-dance-purple uppercase tracking-widest">
+                  <span className="text-lg font-bold text-dance-purple uppercase tracking-widest">
                     {feature.text}
                   </span>
                 </div>

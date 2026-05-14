@@ -15,13 +15,13 @@ const WhyChooseSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section className="py-24  overflow-hidden">
+      <div className="container mx-auto pl-24 pr-10">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Left: Bullets */}
           <div className="lg:w-1/3">
             <h2 className="text-3xl font-black text-dance-purple font-oswald uppercase mb-8">
-              WHY CHOOSE <span className="text-dance-orange">DANCESHALA?</span>
+              WHY CHOOSE <span className="text-dance-orange">DANCE</span>SHALA?
             </h2>
             <ul className="space-y-4">
               {reasons.map((reason, idx) => (
@@ -37,7 +37,7 @@ const WhyChooseSection = () => {
 
           {/* Center: Video Thumbnail */}
           <div className="lg:w-1/3 w-full">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl group aspect-[4/5]">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl group h-94">
               <Image
                 src="/images/danceshala/why-choose.png"
                 alt="Dance Class"
@@ -45,7 +45,7 @@ const WhyChooseSection = () => {
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-              
+
               {/* Play Button */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 <button className="bg-white text-dance-orange p-6 rounded-full shadow-2xl hover:scale-110 transition-transform">
@@ -69,7 +69,7 @@ const WhyChooseSection = () => {
               <p className="text-lg italic font-light leading-relaxed mb-10">
                 DanceShala has given my daughter confidence, discipline and a love for dance. The teachers are amazing and the performances are a great learning experience.
               </p>
-              
+
               <div className="flex items-center space-x-4">
                 <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-dance-orange">
                   <Image

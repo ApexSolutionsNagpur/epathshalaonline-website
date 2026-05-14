@@ -12,7 +12,7 @@ const HeroSection = () => {
 
   return (
     <section className="relative overflow-hidden bg-white pt-20 pb-24 px-4 md:px-24 flex items-center  bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/images/artshala/artshalahero.png')" }}
+      style={{ backgroundImage: "url('/images/artshala/art_hero.png')" }}
     >
       <div className="relative z-10  grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Content */}

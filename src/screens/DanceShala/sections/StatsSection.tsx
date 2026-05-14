@@ -32,8 +32,8 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="px-4 md:px-24 -mt-12 relative z-20">
-      <div className="bg-dance-purple rounded-full p-8 shadow-2xl overflow-hidden relative">
+    <section className=" -mt-12 relative z-20">
+      <div className="bg-dance-purple  p-8 shadow-2xl overflow-hidden relative">
         {/* Subtle Decorative Elements */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-dance-orange/10 rounded-full -mr-16 -mt-16 blur-2xl" />
         <div className="absolute bottom-0 left-0 w-32 h-32 bg-dance-royal/20 rounded-full -ml-16 -mb-16 blur-2xl" />

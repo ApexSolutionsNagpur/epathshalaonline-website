@@ -49,13 +49,13 @@ const WhyChoose = () => {
 
 
           </div>
-          <div>
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-video group cursor-pointer border-4 border-white h-full">
+          <div className=''>
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-video group cursor-pointer h-full">
               <Image
                 src="/images/sportsshala/video_thumb.png"
                 alt="Building Champions"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover transition-transform duration-700 group-hover:scale-105 h-full"
               />
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors flex flex-col items-center justify-center text-white p-6">
                 <div className="w-16 h-16 rounded-full bg-[#95C11F] flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
