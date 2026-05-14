@@ -63,7 +63,7 @@ const Programs = () => {
               key={i}
               className={`bg-white rounded-3xl overflow-hidden shadow-lg shadow-slate-200 border-2 border-transparent ${program.borderColor} transition-all duration-300 hover:-translate-y-2 group`}
             >
-              <div className="h-60 relative overflow-hidden bg-slate-100">
+              <div className="h-96 md:h-60 relative overflow-hidden bg-slate-100">
                 <Image
                   src={program.image}
                   alt={program.title}

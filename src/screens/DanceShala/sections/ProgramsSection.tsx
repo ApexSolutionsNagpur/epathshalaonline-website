@@ -70,7 +70,7 @@ const ProgramsSection = () => {
               key={idx}
               className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition-all duration-300 flex flex-col"
             >
-              <div className="relative h-60 overflow-hidden">
+              <div className="relative h-96 md:h-60 overflow-hidden">
                 <Image
                   src={prog.image}
                   alt={prog.title}
