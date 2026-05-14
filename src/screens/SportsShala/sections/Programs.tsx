@@ -67,7 +67,7 @@ const Programs = () => {
               key={index}
               className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col"
             >
-              <div className="relative h-60 overflow-hidden">
+              <div className="relative h-94 md:h-60 overflow-hidden">
                 <Image
                   src={program.image}
                   alt={program.title}

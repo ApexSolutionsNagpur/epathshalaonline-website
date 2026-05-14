@@ -13,8 +13,8 @@ const WhyChoose = () => {
 
   return (
     <section className="bg-white py-24">
-      <div className=" px-4 md:pr-14">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center">
+      <div className=" px-6 md:pr-14 max-md:pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 items-center">
           {/* Left: Equipment Graphic */}
           <div className="relative group">
             <div className="relative z-10 transition-transform duration-500 group-hover:-rotate-3">

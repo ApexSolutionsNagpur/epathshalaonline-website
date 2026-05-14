@@ -15,8 +15,8 @@ const WhyChooseSection = () => {
   ];
 
   return (
-    <section className="py-24  overflow-hidden">
-      <div className="container mx-auto pl-24 pr-10">
+    <section className="pt-24 pb-32 md:py-24  overflow-hidden">
+      <div className="container mx-auto pl-12 md:pl-24 pr-6 md:pr-10">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Left: Bullets */}
           <div className="lg:w-1/3">

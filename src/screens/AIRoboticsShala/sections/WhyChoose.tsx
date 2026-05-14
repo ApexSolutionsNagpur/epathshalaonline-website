@@ -13,7 +13,7 @@ const WhyChoose = () => {
   ];
 
   return (
-    <section className="bg-white py-24 px-4 md:pr-24 ">
+    <section className="bg-white pt-24 pb-32 md:py-24 px-4 md:pr-24 ">
       <div className="">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 

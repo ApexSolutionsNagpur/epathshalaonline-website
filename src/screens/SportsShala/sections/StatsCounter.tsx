@@ -11,8 +11,8 @@ const StatsCounter = () => {
   ];
 
   return (
-    <section className="-mb-24 relative z-20 px-10">
-      <div className="bg-[linear-gradient(90deg,#052B5B_0%,#0A3C63_20%,#166C4A_55%,#1E8A38_80%,_#0D5A4F_100%)] rounded-full w-full shadow-2xl ">
+    <section className="-mb-24 relative z-20 md:px-10">
+      <div className="bg-[linear-gradient(90deg,#052B5B_0%,#0A3C63_20%,#166C4A_55%,#1E8A38_80%,_#0D5A4F_100%)] md:rounded-full w-full shadow-2xl ">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-0 p-2">
           {stats.map((stat, index) => (
             <div
