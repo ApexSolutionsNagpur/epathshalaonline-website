@@ -13,12 +13,12 @@ const WhyChoose = () => {
   ];
 
   return (
-    <section className="bg-white pt-24 pb-32 md:py-24 px-4 md:pr-24 ">
+    <section className="bg-white pt-12 pb-36 md:py-24 px-4 md:pr-24 ">
       <div className="">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
           {/* Column 1: Robot Image & Benefits */}
-          <div className="lg:col-span-5 flex flex-row justify-between ">
+          <div className="lg:col-span-5 flex flex-col mdflex-row justify-between ">
             <Image
               src="/images/roboticshala/airboticshala.png"
               alt="Advanced Robot"

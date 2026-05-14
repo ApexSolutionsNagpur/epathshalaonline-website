@@ -7,21 +7,19 @@ const Hero = () => {
 
   return (
     <section
-      className="relative overflow-hidden pt-10 pb-20 bg-cover bg-center bg-no-repeat"
+      className="relative overflow-hidden pt-1 pb-20 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/images/sportsshala/sport_hero.png')" }}
     >
       <div className=" px-4 md:px-14 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side Content */}
-        <div className="space-y-8 z-10">
-          <div className="flex items-center gap-2">
-            <Image
-              src="/images/sportsshala/Sportlogo.png"
-              alt="SportsShala Logo"
-              width={300}
-              height={50}
-              className="h-24 md:h-100 w-auto"
-            />
-          </div>
+        <div className="space-y-6 z-10">
+          <Image
+            src="/images/sportsshala/sport shala logo.png"
+            alt="SportsShala Logo"
+            width={300}
+            height={50}
+            className="h-24 md:h-100 w-auto"
+          />
 
           <div className="space-y-2">
             <h1 className="font-oswald text-6xl md:text-8xl font-bold leading-tight text-[#062B5B] uppercase italic">

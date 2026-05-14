@@ -13,7 +13,7 @@ const Hero = () => {
 
   return (
     <section
-      className=" min-h-[90vh] w-full pt-20 pb-16 overflow-hidden bg-cover bg-center bg-no-repeat selection:bg-blue-100"
+      className=" min-h-[90vh] w-full pt-1 pb-16 overflow-hidden bg-cover bg-center bg-no-repeat selection:bg-blue-100"
       style={{ backgroundImage: "url('/images/roboticshala/ai_roboticshero.png')" }}
     >
 
@@ -22,15 +22,15 @@ const Hero = () => {
         <div className="space-y-8">
           <div className="space-y-4">
             {/* Logo / Subtext */}
-            <div className="flex items-center gap-4 animate-fade-in">
-              <div className="p-3 bg-blue-600 rounded-2xl shadow-lg shadow-blue-200">
-                <Bot className="text-white" size={32} />
-              </div>
-              <div>
-                <h2 className="text-blue-600 font-oswald font-bold text-3xl tracking-tighter leading-none">AI</h2>
-                <h3 className="text-[#072B61] font-oswald font-bold text-2xl tracking-tighter leading-none">ROBOTIC</h3>
-                <h4 className="text-[#072B61] font-oswald font-bold text-xl tracking-tighter leading-none">SHALA</h4>
-              </div>
+            <div className="animate-fade-in">
+              <Image
+                src="/images/roboticshala/AI robotic shala logo.png"
+                alt="AI Robotic Shala Logo"
+                width={300}
+                height={50}
+                className="h-auto w-auto"
+                priority
+              />
             </div>
 
             <h1 className="text-5xl md:text-6xl font-oswald font-extrabold text-[#072B61] leading-[1.1] uppercase">

@@ -60,7 +60,7 @@ const CTASection = () => {
           {/* LEFT SECTION */}
           <div
             onClick={() => setIsModalOpen(true)}
-            className={`relative md:w-3/5 bg-gradient-to-r ${theme.gradient} p-4 md:p-12 text-white flex flex-col justify-center items-center cursor-pointer group`}
+            className={`relative md:w-3/5 bg-gradient-to-r ${theme.gradient} p-4 md:p-12 text-white flex flex-col md:flex-row justify-center items-center cursor-pointer group`}
           >
 
             {/* ✅ SVG CURVE (REPLACED SKEW) */}
@@ -106,8 +106,8 @@ const CTASection = () => {
               CALL / WHATSAPP
             </div>
 
-            <a href="tel:+917887889306" className="flex items-center gap-2 md:gap-4 group/phone transition-all">
-              <div className="text-[#062B5B] font-oswald font-extrabold text-xl md:text-5xl tracking-tight group-hover/phone:text-[#1E5AA8] transition-colors">
+            <a href="tel:+917887889306" className="flex max-md:flex-col items-center gap-2 md:gap-4 group/phone transition-all">
+              <div className="text-[#062B5B] font-oswald font-extrabold text-xl md:text-5xl tracking-tight group-hover/phone:text-[#1E5AA8] transition-colors text-nowrap">
                 +91 7887889306
               </div>
               <div className={`flex w-8 h-8 md:w-12 md:h-12 rounded-full border-2 border-[#062B5B] items-center justify-center text-[#062B5B] rotate-[-45deg] group-hover/phone:rotate-0 group-hover/phone:border-[#1E5AA8] group-hover/phone:text-[#1E5AA8] transition-all duration-300`}>

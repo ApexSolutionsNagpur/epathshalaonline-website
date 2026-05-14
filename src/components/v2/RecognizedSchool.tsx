@@ -28,7 +28,7 @@ const RecognizedSchool = () => {
             />
             {/* Overlay Content */}
             <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center p-8 md:p-12">
-              <h3 className="text-white font-heading text-4xl md:text-6xl font-extrabold leading-tight  mb-8 drop-shadow-lg uppercase italic">
+              <h3 className="text-white font-heading text-xl md:text-6xl font-extrabold leading-tight  mb-8 drop-shadow-lg uppercase italic">
                 THIS IS HOW A SCHOOL <span className="text-[#FFC107]">SHOULD BE</span>
               </h3>
 

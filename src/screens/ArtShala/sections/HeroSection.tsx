@@ -11,21 +11,19 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white pt-20 pb-24 px-4 md:px-24 flex items-center  bg-cover bg-center bg-no-repeat"
+    <section className="relative overflow-hidden bg-white pt-1 pb-24 px-4 md:px-24 flex items-center  bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/images/artshala/art_hero.png')" }}
     >
       <div className="relative z-10  grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
-        <div className="space-y-8">
-          <div className="space-y-4">
-            <Image
-              src="/images/artshala/artshalalogo.png"
-              alt="ArtShala Logo"
-              width={220}
-              height={80}
-              className="h-40 w-auto"
-            />
-          </div>
+        <div className="space-y-1">
+          <Image
+            src="/images/artshala/art shala logo.png"
+            alt="ArtShala Logo"
+            width={300}
+            height={50}
+            className="h-auto w-auto"
+          />
 
           <div className="space-y-6">
             <h1 className="text-5xl md:text-7xl font-extrabold leading-tight text-[#132c6b] font-heading">
