@@ -6,7 +6,7 @@ import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import DemoClassModal from './DemoClassModal';
 
-const CustomPrevArrow = (props: any) => {
+const CustomPrevArrow = (props: { onClick?: React.MouseEventHandler<HTMLButtonElement> }) => {
   const { onClick } = props;
   return (
     <button
@@ -18,7 +18,7 @@ const CustomPrevArrow = (props: any) => {
   );
 };
 
-const CustomNextArrow = (props: any) => {
+const CustomNextArrow = (props: { onClick?: React.MouseEventHandler<HTMLButtonElement> }) => {
   const { onClick } = props;
   return (
     <button
@@ -99,7 +99,7 @@ const Testimonials = () => {
                       ))}
                     </div>
                     <p className="text-[#6B7280] text-base mb-8 italic flex-grow">
-                      "{review.content}"
+                      {`"${review.content}"`}
                     </p>
                     <div className="flex items-center gap-4 mt-auto">
                       <img

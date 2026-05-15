@@ -78,7 +78,7 @@ const WhyChoose = () => {
 
             <div className="relative z-10 space-y-8">
               <p className="font-body text-xl italic leading-relaxed font-light opacity-90">
-                "SportsShala has helped me become more confident, disciplined and passionate about sports. The coaches are amazing!"
+                {`"SportsShala has helped me become more confident, disciplined and passionate about sports. The coaches are amazing!"`}
               </p>
 
               <div className="flex items-center gap-5 pt-6 border-t border-white/10">

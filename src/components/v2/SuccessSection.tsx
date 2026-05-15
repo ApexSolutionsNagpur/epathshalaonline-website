@@ -60,7 +60,7 @@ const SuccessSection = () => {
                 </div>
                 <h3 className="text-[#0B3C5D] font-heading font-bold text-2xl">OUR VISION</h3>
                 <p className="text-[#5F6675] text-sm leading-relaxed font-body">
-                  To provide high-quality CBSE education that is accessible, inclusive, and tailored to every child's potential.
+                  {"To provide high-quality CBSE education that is accessible, inclusive, and tailored to every child's potential."}
                 </p>
               </div>
             </div>

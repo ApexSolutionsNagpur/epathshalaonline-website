@@ -71,7 +71,7 @@ const WhyChooseSection = () => {
               <div className="relative z-10 space-y-6">
                 <Quote className="text-[#ff4f87]" size={40} fill="currentColor" />
                 <p className="text-white/90 font-heading text-lg leading-relaxed italic">
-                  "ArtShala helped me discover my passion. The teachers are amazing and the classes are so much fun!"
+                  {`"ArtShala helped me discover my passion. The teachers are amazing and the classes are so much fun!"`}
                 </p>
               </div>
 

@@ -92,7 +92,7 @@ const CTASection = () => {
               </h2>
 
               <p className="text-white/80 text-[10px] md:text-base max-w-md">
-                Limited Seats! Secure your child's future today.
+                {"Limited Seats! Secure your child's future today."}
               </p>
             </div>
 
