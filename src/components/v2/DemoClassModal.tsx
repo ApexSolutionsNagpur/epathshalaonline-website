@@ -195,11 +195,12 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
         {/* Left Side: Promotional Image */}
         <div className="hidden md:block md:w-[45%] relative min-h-[600px]">
           <Image
-            src="/images/modelimage.png" // Using an existing project image
+            src="/images/modelimage.webp"
             alt="Demo Class Promotion"
-            width={500}
-            height={500}
+            width={1448}
+            height={1086}
             className='object-cover h-full w-full'
+            sizes="45vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B3C5D]/80 to-transparent flex flex-col justify-end p-8 text-white">
             <h3 className="text-3xl font-extrabold mb-2 font-heading uppercase">{"Shape Your Child's Future"}</h3>

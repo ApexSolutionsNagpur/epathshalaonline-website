@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import React from 'react';
 import Image from 'next/image';
 import { Sparkles, Star, ShieldCheck, Heart, UserCheck, Zap } from 'lucide-react';
@@ -16,7 +16,7 @@ const HeroSection = () => {
   return (
     <section
       className="relative pt-1 pb-20 overflow-hidden bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/images/danceshala/dancehero.png')" }}
+      style={{ backgroundImage: "url('/images/danceshala/dancehero.webp')" }}
     >
 
       <div className=" mx-auto pl-24 pr-20">
@@ -84,3 +84,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+

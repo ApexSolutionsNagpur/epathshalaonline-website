@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Image from 'next/image';
 import { ChevronRight, Cpu, Bot, Rocket, Target, Zap, Globe } from 'lucide-react';
 
@@ -14,7 +14,7 @@ const Hero = () => {
   return (
     <section
       className=" min-h-[90vh] w-full pt-1 pb-16 overflow-hidden bg-cover bg-center bg-no-repeat selection:bg-blue-100"
-      style={{ backgroundImage: "url('/images/roboticshala/ai_roboticshero.png')" }}
+      style={{ backgroundImage: "url('/images/roboticshala/ai_roboticshero.webp')" }}
     >
 
       <div className=" px-4 md:px-24 flex items-center justify-between w-full">
@@ -79,3 +79,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

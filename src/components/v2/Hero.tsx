@@ -43,17 +43,29 @@ const Hero = () => {
   return (
     <section className="relative bg-[#F5F7FA] overflow-hidden">
       {/* Background Image for Desktop */}
-      <div
-        className="absolute inset-0 hidden md:block bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/herosection.png')" }}
-      />
+      <div className="absolute inset-0 hidden md:block">
+        <Image
+          src="/images/herosection.webp"
+          alt=""
+          fill
+          priority
+          quality={85}
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+      </div>
 
       {/* Top Image for Mobile */}
       <div className="md:hidden w-full relative z-10">
-        <img
-          src="/images/mobillehero.png"
+        <Image
+          src="/images/mobillehero.webp"
           alt="Hero Banner"
+          width={1030}
+          height={1526}
+          priority
+          quality={80}
           className="w-full h-auto"
+          sizes="100vw"
         />
         {/* Transparent Clickable Area for Enroll Now on Mobile */}
         {/* <button

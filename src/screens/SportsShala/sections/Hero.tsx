@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Image from 'next/image';
 import { CheckCircle2 } from 'lucide-react';
 
@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section
       className="relative overflow-hidden pt-1 pb-20 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/images/sportsshala/sport_hero.png')" }}
+      style={{ backgroundImage: "url('/images/sportsshala/sport_hero.webp')" }}
     >
       <div className=" px-4 md:px-14 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side Content */}
@@ -80,3 +80,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

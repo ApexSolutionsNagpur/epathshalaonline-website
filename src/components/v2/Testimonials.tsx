@@ -121,7 +121,7 @@ const Testimonials = () => {
           {/* Right Side CTA Card */}
           <div
             className="rounded-[2rem] p-8 md:p-10 text-white relative overflow-hidden shadow-2xl group h-full flex flex-col justify-between bg-cover bg-center"
-            style={{ backgroundImage: "url('/images/journeyimage.png')" }}
+            style={{ backgroundImage: "url('/images/journeyimage.webp')" }}
           >
             {/* Dark Overlay for better readability */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B3C5D] via-[#0B3C5D]/40 to-transparent"></div>

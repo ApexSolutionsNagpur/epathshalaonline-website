@@ -24,7 +24,8 @@ export default function FacilityCard({
                 src={image}
                 alt={title || "facility"}
                 fill
-                className="object-fit "
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
             />
 
             {overlay && (

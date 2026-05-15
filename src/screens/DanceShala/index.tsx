@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import React from 'react';
 import HeroSection from './sections/HeroSection';
 import FeatureStrip from './sections/FeatureStrip';
@@ -14,7 +14,7 @@ const DanceShalaScreen = () => {
       <FeatureStrip />
       <ProgramsSection />
       <StatsSection />
-      <div className='overflow-hidden bg-cover bg-center bg-no-repeat ' style={{ backgroundImage: "url('/images/danceshala/whychooseimg.png')" }} >
+      <div className='overflow-hidden bg-cover bg-center bg-no-repeat ' style={{ backgroundImage: "url('/images/danceshala/whychooseimg.webp')" }} >
         <WhyChooseSection />
         <CTASection />
       </div>
@@ -23,3 +23,4 @@ const DanceShalaScreen = () => {
 };
 
 export default DanceShalaScreen;
+

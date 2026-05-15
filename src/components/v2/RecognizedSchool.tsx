@@ -20,11 +20,12 @@ const RecognizedSchool = () => {
         <div className="relative group">
           <div className="relative rounded-3xl overflow-hidden shadow-2xl transform transition-transform duration-500 group-hover:scale-[1.02]">
             <Image
-              src="/images/recognizedschool.png"
+              src="/images/recognizedschool.webp"
               alt="School Environment"
-              width={800}
-              height={500}
+              width={1623}
+              height={969}
               className="w-full h-auto object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1280px"
             />
             {/* Overlay Content */}
             <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center p-8 md:p-12">
