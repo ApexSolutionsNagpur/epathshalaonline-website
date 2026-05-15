@@ -24,7 +24,7 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="text-center lg:text-left mb-12 lg:mb-0">
             <Image
-              src="/images/danceshala/dance shala logo.png"
+              src="/images/danceshala/danceshalalogo.png"
               alt="DanceShala Logo"
               width={300}
               height={50}

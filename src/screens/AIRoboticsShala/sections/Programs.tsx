@@ -7,7 +7,7 @@ const Programs = () => {
       title: "AI EXPLORERS",
       desc: "Introduction to Artificial Intelligence and Machine Learning concepts.",
       grades: "Grades 5 - 8",
-      image: "/images/roboticshala/Ai_explore.png",
+      image: "/images/roboticshala/ai_explore.png",
       borderColor: "hover:border-blue-500"
     },
     {
@@ -28,7 +28,7 @@ const Programs = () => {
       title: "IOT & AUTOMATION",
       desc: "Explore IoT, sensors and automation to build smart real-world solutions.",
       grades: "Grades 7 - 12",
-      image: "/images/roboticshala/IOT_automation.jpg",
+      image: "/images/roboticshala/iot_automation.jpg",
       borderColor: "hover:border-blue-500"
     },
     {

@@ -18,7 +18,7 @@ const HeroSection = () => {
         {/* Left Content */}
         <div className="space-y-1">
           <Image
-            src="/images/artshala/art shala logo.png"
+            src="/images/artshala/artshalalogo.png"
             alt="ArtShala Logo"
             width={300}
             height={50}

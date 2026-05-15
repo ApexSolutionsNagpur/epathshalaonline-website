@@ -22,7 +22,7 @@ const Programs = () => {
       title: 'BADMINTON',
       description: 'Improve speed, reflexes & concentration.',
       grades: 'Grades 1 - 12',
-      image: '/images/sportsshala/Badminton.png',
+      image: '/images/sportsshala/badminton.png',
       imgPos: 'object-[0%_0%]',
       icon: '🏸',
     },

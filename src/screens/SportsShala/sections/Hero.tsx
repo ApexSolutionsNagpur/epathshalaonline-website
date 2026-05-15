@@ -14,7 +14,7 @@ const Hero = () => {
         {/* Left Side Content */}
         <div className="space-y-6 z-10">
           <Image
-            src="/images/sportsshala/sport shala logo.png"
+            src="/images/sportsshala/sportshalalogo.png"
             alt="SportsShala Logo"
             width={300}
             height={50}

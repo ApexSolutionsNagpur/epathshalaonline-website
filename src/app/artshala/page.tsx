@@ -4,7 +4,7 @@ export const metadata = {
   title: "ArtShala | Unleash Creativity. Shape Your Future.",
   description: "ArtShala is the creative space for young artists to learn, explore and express their imagination. Join our community of creators today.",
   icons: {
-    icon: "/images/artshala/art shala logo.png",
+    icon: "/images/artshala/artshalalogo.png",
   },
 };
 

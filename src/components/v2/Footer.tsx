@@ -21,7 +21,7 @@ const Footer = () => {
         <div className="space-y-4">
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/images/FooterLogo.png"
+              src="/images/footerlogo.png"
               alt="ePathshala Logo"
               width={200}
               height={200}

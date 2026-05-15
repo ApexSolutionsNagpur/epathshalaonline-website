@@ -20,7 +20,7 @@ const RecognizedSchool = () => {
         <div className="relative group">
           <div className="relative rounded-3xl overflow-hidden shadow-2xl transform transition-transform duration-500 group-hover:scale-[1.02]">
             <Image
-              src="/images/RecognizedSchool.png"
+              src="/images/recognizedschool.png"
               alt="School Environment"
               width={800}
               height={500}

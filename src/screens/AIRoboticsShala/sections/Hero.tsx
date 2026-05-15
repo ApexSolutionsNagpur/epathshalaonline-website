@@ -24,7 +24,7 @@ const Hero = () => {
             {/* Logo / Subtext */}
             <div className="animate-fade-in">
               <Image
-                src="/images/roboticshala/AI robotic shala logo.png"
+                src="/images/roboticshala/airoboticshalalogo.png"
                 alt="AI Robotic Shala Logo"
                 width={300}
                 height={50}

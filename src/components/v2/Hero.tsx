@@ -45,13 +45,13 @@ const Hero = () => {
       {/* Background Image for Desktop */}
       <div
         className="absolute inset-0 hidden md:block bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/HeroSection.png')" }}
+        style={{ backgroundImage: "url('/images/herosection.png')" }}
       />
 
       {/* Top Image for Mobile */}
       <div className="md:hidden w-full relative z-10">
         <img
-          src="/images/mobilleHero.png"
+          src="/images/mobillehero.png"
           alt="Hero Banner"
           className="w-full h-auto"
         />
