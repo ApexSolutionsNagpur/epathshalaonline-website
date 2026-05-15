@@ -19,12 +19,7 @@ const GA4_TO_META_EVENT: Record<string, string> = {
   contact: 'Contact',
 };
 
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-    fbq?: (...args: unknown[]) => void;
-  }
-}
+
 
 export function trackEvent(
   eventName: string,
