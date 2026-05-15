@@ -14,8 +14,10 @@ const DanceShalaScreen = () => {
       <FeatureStrip />
       <ProgramsSection />
       <StatsSection />
-      <WhyChooseSection />
-      <CTASection />
+      <div className='overflow-hidden bg-cover bg-center bg-no-repeat ' style={{ backgroundImage: "url('/images/danceshala/whychooseimg.png')" }} >
+        <WhyChooseSection />
+        <CTASection />
+      </div>
     </div>
   );
 };

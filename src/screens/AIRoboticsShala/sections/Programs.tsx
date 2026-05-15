@@ -7,48 +7,48 @@ const Programs = () => {
       title: "AI EXPLORERS",
       desc: "Introduction to Artificial Intelligence and Machine Learning concepts.",
       grades: "Grades 5 - 8",
-      image: "/images/programs/ai-explorers.png",
+      image: "/images/roboticshala/Ai_explore.png",
       borderColor: "hover:border-blue-500"
     },
     {
       title: "ROBOTICS BEGINNERS",
       desc: "Learn robotics fundamentals and build your first robot projects.",
       grades: "Grades 5 - 10",
-      image: "/images/programs/robotics-beginners.png",
+      image: "/images/roboticshala/robotics_beginners.png",
       borderColor: "hover:border-blue-500"
     },
     {
       title: "CODING MASTERS",
       desc: "Master Python, logic building and problem solving through exciting challenges.",
       grades: "Grades 5 - 12",
-      image: "/images/programs/coding-masters.png",
+      image: "/images/roboticshala/coding_master.jpg",
       borderColor: "hover:border-blue-500"
     },
     {
       title: "IOT & AUTOMATION",
       desc: "Explore IoT, sensors and automation to build smart real-world solutions.",
       grades: "Grades 7 - 12",
-      image: "/images/programs/iot.png",
+      image: "/images/roboticshala/IOT_automation.jpg",
       borderColor: "hover:border-blue-500"
     },
     {
       title: "AI & DATA SCIENCE",
       desc: "Dive into data, analytics and AI models to solve real-life problems.",
       grades: "Grades 8 - 12",
-      image: "/images/programs/data-science.png",
+      image: "/images/roboticshala/ai_datascience.jpg",
       borderColor: "hover:border-blue-500"
     },
     {
       title: "GAME & APP DEVELOPMENT",
       desc: "Design and code your own games and mobile apps.",
       grades: "Grades 6 - 12",
-      image: "/images/programs/game-dev.png",
+      image: "/images/roboticshala/game_app_development.png",
       borderColor: "hover:border-blue-500"
     }
   ];
 
   return (
-    <section className="bg-slate-50 py-24 px-4 md:px-24 ">
+    <section className="bg-slate-50 py-24 px-4 md:px-16 ">
       <div className="">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-3xl md:text-5xl font-oswald font-extrabold text-[#072B61] uppercase">
@@ -63,7 +63,7 @@ const Programs = () => {
               key={i}
               className={`bg-white rounded-3xl overflow-hidden shadow-lg shadow-slate-200 border-2 border-transparent ${program.borderColor} transition-all duration-300 hover:-translate-y-2 group`}
             >
-              <div className="h-48 relative overflow-hidden bg-slate-100">
+              <div className="h-96 md:h-60 relative overflow-hidden bg-slate-100">
                 <Image
                   src={program.image}
                   alt={program.title}

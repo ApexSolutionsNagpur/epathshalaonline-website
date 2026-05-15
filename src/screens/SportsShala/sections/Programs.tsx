@@ -22,7 +22,7 @@ const Programs = () => {
       title: 'BADMINTON',
       description: 'Improve speed, reflexes & concentration.',
       grades: 'Grades 1 - 12',
-      image: '/images/sportsshala/others_grid.png',
+      image: '/images/sportsshala/Badminton.png',
       imgPos: 'object-[0%_0%]',
       icon: '🏸',
     },
@@ -30,7 +30,7 @@ const Programs = () => {
       title: 'CRICKET',
       description: 'Build technique, strategy & match temperament.',
       grades: 'Grades 1 - 12',
-      image: '/images/sportsshala/others_grid.png',
+      image: '/images/sportsshala/cricket.png',
       imgPos: 'object-[100%_0%]',
       icon: '🏏',
     },
@@ -38,7 +38,7 @@ const Programs = () => {
       title: 'ATHLETICS',
       description: 'Build speed, strength & endurance.',
       grades: 'Grades 1 - 12',
-      image: '/images/sportsshala/others_grid.png',
+      image: '/images/sportsshala/athletics.png',
       imgPos: 'object-[0%_100%]',
       icon: '🏃',
     },
@@ -46,7 +46,7 @@ const Programs = () => {
       title: 'FITNESS & YOGA',
       description: 'Improve flexibility, focus & overall well-being.',
       grades: 'All Grades',
-      image: '/images/sportsshala/others_grid.png',
+      image: '/images/sportsshala/yoga.jpg',
       imgPos: 'object-[100%_100%]',
       icon: '🧘',
     },
@@ -67,16 +67,16 @@ const Programs = () => {
               key={index}
               className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col"
             >
-              <div className="relative h-60 overflow-hidden">
+              <div className="relative h-94 md:h-60 overflow-hidden">
                 <Image
                   src={program.image}
                   alt={program.title}
                   fill
-                  className={`object-cover transition-transform duration-500 group-hover:scale-110 ${program.imgPos || ''}`}
+                  className={`object-fit transition-transform duration-500 group-hover:scale-110 ${program.imgPos || ''}`}
                 />
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2 rounded-lg shadow-md">
+                {/* <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2 rounded-lg shadow-md">
                   <span className="text-2xl">{program.icon}</span>
-                </div>
+                </div> */}
               </div>
 
               <div className="p-8 flex flex-col flex-grow">
