@@ -33,11 +33,13 @@ const Footer = () => {
             Learn. Grow. Succeed - Anytime, Anywhere.
           </p>
           <div className="flex gap-4 pt-2">
-            {[FaFacebookF, FaInstagram].map((Icon, i) => (
-              <div key={i} className={`w-8 h-8 rounded-full flex items-center justify-center hover:scale-110 cursor-pointer transition-all ${isSportsShala ? 'bg-[#95C11F]' : isDanceShala ? 'bg-[#FF7A00]' : isArtShala ? 'bg-[#a21caf]' : 'bg-[#1E5AA8]'}`}>
-
+            {[
+              { Icon: FaFacebookF, href: 'https://www.facebook.com/epathshala.online.school/' },
+              { Icon: FaInstagram, href: 'https://www.instagram.com/epathshalaonline/' },
+            ].map(({ Icon, href }, i) => (
+              <a key={i} href={href} target="_blank" rel="noopener noreferrer" className={`w-8 h-8 rounded-full flex items-center justify-center hover:scale-110 cursor-pointer transition-all ${isSportsShala ? 'bg-[#95C11F]' : isDanceShala ? 'bg-[#FF7A00]' : isArtShala ? 'bg-[#a21caf]' : 'bg-[#1E5AA8]'}`}>
                 <Icon size={16} />
-              </div>
+              </a>
             ))}
           </div>
         </div>

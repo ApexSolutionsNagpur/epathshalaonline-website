@@ -18,8 +18,8 @@ const organizationSchema = {
     addressCountry: 'IN',
   },
   sameAs: [
-    'https://www.facebook.com/epathshalaonline',
-    'https://www.instagram.com/epathshalaonline',
+    'https://www.facebook.com/epathshala.online.school/',
+    'https://www.instagram.com/epathshalaonline/',
   ],
   contactPoint: [
     {
