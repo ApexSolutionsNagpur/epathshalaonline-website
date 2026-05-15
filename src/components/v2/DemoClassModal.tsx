@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { X, ChevronDown, ArrowRight, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import { captureLead } from '@/services/leadService';
+import { trackEvent } from '@/lib/trackEvent';
 
 interface DemoClassModalProps {
   isOpen: boolean;
@@ -96,6 +97,14 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
         grade_level: formData.grade,
         city: formData.city.trim(),
         source: typeof window !== 'undefined' ? window.location.href : ''
+      });
+
+      // Fire conversion events to GA4 and Meta Pixel
+      trackEvent('generate_lead', {
+        form_name: 'demo_class_enrollment',
+        programme: formData.programme,
+        grade: formData.grade,
+        city: formData.city.trim(),
       });
 
       setSubmitStatus({
