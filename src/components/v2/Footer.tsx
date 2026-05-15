@@ -23,8 +23,8 @@ const Footer = () => {
             <Image
               src="/images/footerlogo.webp"
               alt="ePathshala Logo"
-              width={200}
-              height={200}
+              width={465}
+              height={136}
               className="h-12 md:h-20 w-auto"
               priority
             />
@@ -34,11 +34,11 @@ const Footer = () => {
           </p>
           <div className="flex gap-4 pt-2">
             {[
-              { Icon: FaFacebookF, href: 'https://www.facebook.com/epathshala.online.school/' },
-              { Icon: FaInstagram, href: 'https://www.instagram.com/epathshalaonline/' },
-            ].map(({ Icon, href }, i) => (
-              <a key={i} href={href} target="_blank" rel="noopener noreferrer" className={`w-8 h-8 rounded-full flex items-center justify-center hover:scale-110 cursor-pointer transition-all ${isSportsShala ? 'bg-[#95C11F]' : isDanceShala ? 'bg-[#FF7A00]' : isArtShala ? 'bg-[#a21caf]' : 'bg-[#1E5AA8]'}`}>
-                <Icon size={16} />
+              { Icon: FaFacebookF, href: 'https://www.facebook.com/epathshala.online.school/', ariaLabel: 'Visit ePathshala on Facebook' },
+              { Icon: FaInstagram, href: 'https://www.instagram.com/epathshalaonline/', ariaLabel: 'Follow ePathshala on Instagram' },
+            ].map(({ Icon, href, ariaLabel }, i) => (
+              <a key={i} href={href} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel} className={`w-8 h-8 rounded-full flex items-center justify-center hover:scale-110 cursor-pointer transition-all ${isSportsShala ? 'bg-[#95C11F]' : isDanceShala ? 'bg-[#FF7A00]' : isArtShala ? 'bg-[#a21caf]' : 'bg-[#1E5AA8]'}`}>
+                <Icon size={16} aria-hidden="true" />
               </a>
             ))}
           </div>
@@ -46,7 +46,7 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h4 className={`font-bold text-base mb-4 ${isSportsShala ? 'text-[#95C11F]' : isAIRoboticsShala ? 'text-[#0D6EFD]' : isDanceShala ? 'text-[#FF7A00]' : 'text-[#20C997]'} font-heading uppercase tracking-wider`}>Quick Links</h4>
+          <h2 className={`font-bold text-base mb-4 ${isSportsShala ? 'text-[#95C11F]' : isAIRoboticsShala ? 'text-[#0D6EFD]' : isDanceShala ? 'text-[#FF7A00]' : 'text-[#20C997]'} font-heading uppercase tracking-wider`}>Quick Links</h2>
 
           <ul className="space-y-2 text-gray-300">
             {['Home', 'About Us', 'Academics', 'Programs', 'Admissions'].map((link) => (
@@ -57,7 +57,7 @@ const Footer = () => {
 
         {/* Programs */}
         <div>
-          <h4 className={`font-bold text-base mb-4 ${isSportsShala ? 'text-[#95C11F]' : isAIRoboticsShala ? 'text-[#0D6EFD]' : isDanceShala ? 'text-[#FF7A00]' : 'text-[#20C997]'} font-heading uppercase tracking-wider`}>Programs</h4>
+          <h2 className={`font-bold text-base mb-4 ${isSportsShala ? 'text-[#95C11F]' : isAIRoboticsShala ? 'text-[#0D6EFD]' : isDanceShala ? 'text-[#FF7A00]' : 'text-[#20C997]'} font-heading uppercase tracking-wider`}>Programs</h2>
 
           <ul className="space-y-2 text-gray-300">
             {['CBSE Academic', 'JEE & NEET Foundation', 'STEM & Coding', 'ArtShala', 'SportsShala', 'Life Skills'].map((link) => (
@@ -68,7 +68,7 @@ const Footer = () => {
 
         {/* Newsletter */}
         <div>
-          <h4 className={`font-bold text-base mb-4 ${isSportsShala ? 'text-[#95C11F]' : isAIRoboticsShala ? 'text-[#0D6EFD]' : isDanceShala ? 'text-[#FF7A00]' : 'text-[#20C997]'} font-heading uppercase tracking-wider`}>Newsletter</h4>
+          <h2 className={`font-bold text-base mb-4 ${isSportsShala ? 'text-[#95C11F]' : isAIRoboticsShala ? 'text-[#0D6EFD]' : isDanceShala ? 'text-[#FF7A00]' : 'text-[#20C997]'} font-heading uppercase tracking-wider`}>Newsletter</h2>
 
           <p className="text-sm text-gray-300 mb-4">Stay updated with the latest news and exclusive offers.</p>
           <div className="flex">
@@ -85,7 +85,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto border-t border-white/20 pt-8 text-center text-sm text-gray-400 font-body">
+      <div className="max-w-7xl mx-auto border-t border-white/20 pt-8 text-center text-sm text-gray-200 font-body">
         <p>© {new Date().getFullYear()} ePathshala Online School. All Rights Reserved.</p>
       </div>
     </footer>

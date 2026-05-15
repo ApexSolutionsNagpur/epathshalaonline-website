@@ -59,8 +59,8 @@ const Header = () => {
           <Image
             src="/images/logo.webp"
             alt="ePathshala Logo"
-            width={200}
-            height={200}
+            width={612}
+            height={408}
             className="h-40 md:h-60 w-auto"
             priority
           />

@@ -11,9 +11,10 @@ const CustomPrevArrow = (props: { onClick?: React.MouseEventHandler<HTMLButtonEl
   return (
     <button
       onClick={onClick}
+      aria-label="Previous slide"
       className="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 md:-ml-12 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-[#0B3C5D] hover:bg-[#1E5AA8] hover:text-white transition-colors"
     >
-      <ChevronLeft size={24} />
+      <ChevronLeft size={24} aria-hidden="true" />
     </button>
   );
 };
@@ -23,9 +24,10 @@ const CustomNextArrow = (props: { onClick?: React.MouseEventHandler<HTMLButtonEl
   return (
     <button
       onClick={onClick}
+      aria-label="Next slide"
       className="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 md:-mr-12 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-[#0B3C5D] hover:bg-[#1E5AA8] hover:text-white transition-colors"
     >
-      <ChevronRight size={24} />
+      <ChevronRight size={24} aria-hidden="true" />
     </button>
   );
 };
@@ -108,8 +110,8 @@ const Testimonials = () => {
                         className="w-14 h-14 rounded-full object-cover border-2 border-[#1E5AA8]"
                       />
                       <div>
-                        <h4 className="font-bold text-[#1F2937] text-base">{review.name}</h4>
-                        <p className="text-sm text-[#00A8A8] font-medium">{review.role}</p>
+                        <p className="font-bold text-[#1F2937] text-base">{review.name}</p>
+                        <p className="text-sm text-[#005F6B] font-medium">{review.role}</p>
                       </div>
                     </div>
                   </div>

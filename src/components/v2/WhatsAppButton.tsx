@@ -6,7 +6,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 const WhatsAppButton = () => {
   return (
     <a
-      href="https://wa.me/917887889306?text=Hello!%20may%20know%20about%20ePathshala%20Online%20School"
+      href="https://wa.me/917887889306?text=Hello!%20may%20i%20know%20more%20about%20ePathshala%20Online%20School"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-28 md:bottom-10 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 flex items-center justify-center animate-bounce"

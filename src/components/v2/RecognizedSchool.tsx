@@ -34,8 +34,11 @@ const RecognizedSchool = () => {
               </h3>
 
               {/* Play Button */}
-              <button className="w-16 h-16 md:w-20 md:h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border-2 border-white/50 hover:bg-white hover:text-[#0B3C5D] hover:scale-110 transition-all duration-300">
-                <Play size={32} fill="currentColor" />
+              <button
+                aria-label="Play introduction video"
+                className="w-16 h-16 md:w-20 md:h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border-2 border-white/50 hover:bg-white hover:text-[#0B3C5D] hover:scale-110 transition-all duration-300"
+              >
+                <Play size={32} fill="currentColor" aria-hidden="true" />
               </button>
             </div>
           </div>

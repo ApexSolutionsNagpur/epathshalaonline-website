@@ -90,8 +90,8 @@ const Hero = () => {
                   <div className="text-[#0B3C5D] font-extrabold text-xl leading-tight tracking-tight uppercase">
                     Flexible <br /> Learning
                   </div>
-                  <div className="flex items-center gap-2 mt-1 text-[#00A8A8] font-bold text-xs">
-                    <span className="w-4 h-[2px] bg-[#00A8A8]"></span>
+                  <div className="flex items-center gap-2 mt-1 text-[#005F6B] font-bold text-xs">
+                    <span className="w-4 h-[2px] bg-[#005F6B]"></span>
                     BETTER FUTURE
                   </div>
                 </div>
@@ -135,9 +135,9 @@ const Hero = () => {
                   <div className="bg-gray-50 p-2 rounded-lg">
                     {card.icon}
                   </div>
-                  <h4 className="text-[11px] md:text-xs font-bold text-[#0B3C5D] leading-tight px-1 uppercase tracking-tight">
+                  <p className="text-[11px] md:text-xs font-bold text-[#0B3C5D] leading-tight px-1 uppercase tracking-tight">
                     {card.title}
-                  </h4>
+                  </p>
                 </div>
               ))}
             </div>
