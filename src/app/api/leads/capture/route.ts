@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const CRM_URL = process.env.CRM_API_URL || 'https://crm.epathshalaonline.com/api/v1';
+const CRM_ENDPOINT = process.env.CRM_API_URL || 'https://crm.epathshalaonline.com/api/v1/leads/capture';
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
-    const crmRes = await fetch(`${CRM_URL}/leads/capture`, {
+    const crmRes = await fetch(CRM_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
