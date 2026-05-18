@@ -13,12 +13,12 @@ const WhyChoose = () => {
   ];
 
   return (
-    <section className="bg-white pt-12 pb-36 md:py-24 px-4 md:pr-24 ">
+    <section className="bg-white pt-12 pb-36 md:py-10 px-4 md:pr-24 ">
       <div className="">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
           {/* Column 1: Robot Image & Benefits */}
-          <div className="lg:col-span-5 flex flex-col mdflex-row justify-between ">
+          <div className="lg:col-span-5 flex flex-col md:flex-row justify-between ">
             <Image
               src="/images/roboticshala/airboticshala.png"
               alt="Advanced Robot"
@@ -36,7 +36,7 @@ const WhyChoose = () => {
                 {benefits.map((benefit, i) => (
                   <li key={i} className="flex items-start gap-3 group">
                     <CheckCircle2 className="text-blue-600 flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" size={20} />
-                    <span className="text-slate-600 font-medium text-sm md:text-base">{benefit}</span>
+                    <span className="text-slate-600 font-medium text-base">{benefit}</span>
                   </li>
                 ))}
               </ul>

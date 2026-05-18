@@ -25,7 +25,7 @@ export default function FacilitiesSection() {
 
                 {/* Stadium with Overlay */}
                 <FacilityCard
-                    image="/images/ai_robotics.png"
+                    image="/images/ai_robotics.webp"
                     title="STEM & Robotics"
                     description="Future-ready education focusing on AI, Data Science, and hands-on scientific exploration."
                     // overlay={true}
@@ -33,21 +33,21 @@ export default function FacilitiesSection() {
                     href="/airoboticsshala"
                 />
 
-                <FacilityCard image="/images/sport_shala.png"
+                <FacilityCard image="/images/sport_shala.webp"
                     title="Arts & Creative Expression"
                     description="Developing aesthetic sense and creative thinking through visual arts and music."
                     // overlay={true}
                     href="/sportsshala"
                 />
 
-                <FacilityCard image="/images/dance_shala.png"
+                <FacilityCard image="/images/dance_shala.webp"
                     title="Sports & Athletics"
                     description="Structured physical education and professional training pathways for aspiring athletes."
                     // overlay={true} 
                     href="/danceshala"
                 />
 
-                <FacilityCard image="/images/art_shala.png"
+                <FacilityCard image="/images/art_shala.webp"
                     title="Soft Skills & Communication"
                     description="Building leadership, confidence, and global communication skills for tomorrow's careers."
                     // overlay={true} 

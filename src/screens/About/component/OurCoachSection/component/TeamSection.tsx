@@ -15,17 +15,17 @@ const teamData: TeamMember[] = [
   {
     name: "Ryan Cole",
     role: "Head Coach",
-    image: "/images/heroImages.jpg",
+    image: "/images/heroimages.jpg",
   },
   {
     name: "Amanda Lee",
     role: "Assistant Coach",
-    image: "/images/heroImages.jpg",
+    image: "/images/heroimages.jpg",
   },
   {
     name: "Daniel Smith",
     role: "Fitness Trainer",
-    image: "/images/heroImages.jpg",
+    image: "/images/heroimages.jpg",
   },
 ];
 

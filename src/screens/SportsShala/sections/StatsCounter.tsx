@@ -11,13 +11,13 @@ const StatsCounter = () => {
   ];
 
   return (
-    <section className="-mb-24 relative z-20 md:px-10">
+    <section className="mb-10 relative z-20 md:px-10">
       <div className="bg-[linear-gradient(90deg,#052B5B_0%,#0A3C63_20%,#166C4A_55%,#1E8A38_80%,_#0D5A4F_100%)] md:rounded-full w-full shadow-2xl ">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-0 p-2">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`flex items-center gap-4 text-white p-4 ${index !== stats.length - 1 ? 'lg:border-r lg:border-white/20' : ''
+              className={`flex items-center justify-start md:justify-center gap-4 text-white p-4 ${index !== stats.length - 1 ? 'lg:border-r lg:border-white/20' : ''
                 }`}
             >
               <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-md">

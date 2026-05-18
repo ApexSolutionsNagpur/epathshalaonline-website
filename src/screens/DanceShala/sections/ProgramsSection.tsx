@@ -56,12 +56,13 @@ const ProgramsSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="pt-10 pb-20 bg-white">
       <div className="px-4 md:px-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-black text-dance-purple font-oswald uppercase">
             OUR <span className="text-dance-orange">DANCE PROGRAMS</span>
           </h2>
+          <div className="w-24 h-1.5 bg-dance-orange mx-auto rounded-full"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">

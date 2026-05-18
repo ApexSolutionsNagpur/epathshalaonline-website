@@ -7,37 +7,37 @@ const ProgramsSection = () => {
     {
       title: "SKETCHING",
       grades: "Grades 1 - 12",
-      image: "/images/artshala/artshalalogo.png",
+      image: "/images/artshala/sketching.webp",
       bgColor: "bg-pink-50"
     },
     {
       title: "PAINTING",
       grades: "Grades 1 - 12",
-      image: "/images/artshala/artshalalogo.png",
+      image: "/images/artshala/painting.webp",
       bgColor: "bg-yellow-50"
     },
     {
       title: "DIGITAL ART",
       grades: "Grades 5 - 12",
-      image: "/images/artshala/artshalalogo.png",
+      image: "/images/artshala/digital_art.webp",
       bgColor: "bg-blue-50"
     },
     {
       title: "SCULPTURE & CLAY",
       grades: "Grades 5 - 12",
-      image: "/images/artshala/artshalalogo.png",
+      image: "/images/artshala/sculpturen_clay.webp",
       bgColor: "bg-green-50"
     },
     {
       title: "MANDALA & FOLK ART",
       grades: "Grades 1 - 12",
-      image: "/images/artshala/artshalalogo.png",
+      image: "/images/artshala/folk_art.webp",
       bgColor: "bg-orange-50"
     }
   ];
 
   return (
-    <section className="bg-[#f3f3f3] py-18 px-4 md:px-14">
+    <section className="bg-[#f3f3f3] py-10 px-4 md:px-14">
       <div className="">
         <div className="text-center mb-16 space-y-2">
           <h2 className="text-3xl md:text-4xl font-bold text-[#132c6b] font-heading uppercase tracking-wider">
@@ -52,12 +52,12 @@ const ProgramsSection = () => {
               key={index}
               className={`${program.bgColor} rounded-[25px] overflow-hidden shadow-sm hover:shadow-lg transition-all group border border-transparent hover:border-pink-200`}
             >
-              <div className="h-48 relative overflow-hidden">
+              <div className="h-96 md:h-64 relative overflow-hidden">
                 <Image
                   src={program.image}
                   alt={program.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="object-fit group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="p-6 space-y-4">

@@ -23,7 +23,6 @@ const HomePageV2 = () => {
       <main>
         <Hero />
         <FeaturesRow />
-
         <DiscoverExcellence />
         <AdmissionsOpen />
         <RecognizedSchool />

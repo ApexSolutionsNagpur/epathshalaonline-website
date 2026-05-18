@@ -16,8 +16,8 @@ const WhyChooseSection = () => {
 
   return (
     <section className="pt-24 pb-32 md:py-24  overflow-hidden">
-      <div className="container mx-auto pl-12 md:pl-24 pr-6 md:pr-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+      <div className="container mx-auto px-4 md:pl-24  md:pr-10">
+        <div className="flex flex-col lg:flex-row  items-start md:items-center gap-12">
           {/* Left: Bullets */}
           <div className="lg:w-1/3">
             <h2 className="text-3xl font-black text-dance-purple font-oswald uppercase mb-8">
@@ -27,7 +27,7 @@ const WhyChooseSection = () => {
               {reasons.map((reason, idx) => (
                 <li key={idx} className="flex items-start space-x-3 group">
                   <IoCheckmarkCircle className="w-6 h-6 text-dance-orange flex-shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="text-dance-text-sec text-sm font-medium leading-tight">
+                  <span className="text-dance-text-sec text-base font-medium leading-tight">
                     {reason}
                   </span>
                 </li>

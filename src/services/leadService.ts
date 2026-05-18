@@ -10,13 +10,11 @@ export interface LeadData {
   form_id: number;
 }
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://crm.epathshalaonline.com/api/v1';
-
 export const captureLead = async (data: LeadData) => {
   console.log('Sending lead data to API:', data);
-  
+
   try {
-    const response = await fetch(`${API_BASE_URL}/leads/capture`, {
+    const response = await fetch('/api/leads/capture', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

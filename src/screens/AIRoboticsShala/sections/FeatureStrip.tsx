@@ -37,7 +37,7 @@ const FeatureStrip = () => {
 
       <div className="px-4 md:px-24  flex flex-wrap justify-between items-center gap-y-8">
         {features.map((feature, i) => (
-          <div key={i} className="flex items-center gap-4 group cursor-pointer">
+          <div key={i} className="flex items-center  gap-4 group cursor-pointer">
             <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center backdrop-blur-md group-hover:bg-blue-500 transition-all duration-300">
               {feature.icon}
             </div>

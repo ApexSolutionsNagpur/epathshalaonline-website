@@ -19,9 +19,10 @@ const SuccessSection = () => {
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-xl h-full min-h-[520px] md:min-h-[600px] group">
             <Image
-              src="/images/studentwinimg.png"
+              src="/images/studentwinimg.webp"
               alt="Students Success"
               fill
+              sizes="(max-width: 1024px) 100vw, 58vw"
               className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -39,10 +40,11 @@ const SuccessSection = () => {
           {/* Top Horizontal Image */}
           <div className="relative rounded-2xl overflow-hidden shadow-xl h-[350px] md:h-[450px] group">
             <Image
-              src="/images/our_vision.png"
+              src="/images/our_vision.webp"
               alt="Students Celebration"
               fill
-              className="object- transition-transform duration-700 group-hover:scale-110"
+              sizes="(max-width: 1024px) 100vw, 42vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>

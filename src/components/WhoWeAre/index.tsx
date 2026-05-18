@@ -27,8 +27,8 @@ export default function WhoWeAre({
     tagline = "20+ Years of Excellence",
     title = "Leading CBSE Academic \nSuccess for Two Decades",
     description = "ePathshala Online CBSE School is built on a foundation of trust and proven results. Our technology-enabled infrastructure and experienced faculty ensure that every student receives the individual attention they deserve.",
-    mainImage = "/images/heroImages.jpg",
-    secondaryImage = "/images/heroImages.jpg",
+    mainImage = "/images/heroimages.jpg",
+    secondaryImage = "/images/heroimages.jpg",
     cards = defaultCards,
 }: WhoWeAreProps) {
     // Split title by \n for line breaks

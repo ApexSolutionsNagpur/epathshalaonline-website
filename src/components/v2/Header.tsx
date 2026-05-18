@@ -57,10 +57,10 @@ const Header = () => {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/images/Logo.png"
+            src="/images/logo.webp"
             alt="ePathshala Logo"
-            width={200}
-            height={200}
+            width={612}
+            height={408}
             className="h-40 md:h-60 w-auto"
             priority
           />
@@ -157,7 +157,7 @@ const Header = () => {
           <div className="flex items-center justify-between mb-8">
             <Link href="/" onClick={() => setIsMenuOpen(false)}>
               <Image
-                src="/images/Logo.png"
+                src="/images/logo.webp"
                 alt="ePathshala Logo"
                 width={200}
                 height={200}

@@ -30,24 +30,24 @@ export default function FacilitiesSection() {
 
                 {/* Stadium with Overlay */}
                 <FacilityCard
-                    image="/images/heroImages.jpg"
+                    image="/images/heroimages.jpg"
                     title="Football Stadium"
                     description="Lorem ipsum dolor sit amet consectetur adipiscing, elit feugiat platea dictumst fames."
                     overlay={true}
                     defaultActive={true}
                 />
 
-                <FacilityCard image="/images/heroImages.jpg"
+                <FacilityCard image="/images/heroimages.jpg"
                     title="Football Stadium"
                     description="Lorem ipsum dolor sit amet consectetur adipiscing, elit feugiat platea dictumst fames."
                     overlay={true} />
 
-                <FacilityCard image="/images/heroImages.jpg"
+                <FacilityCard image="/images/heroimages.jpg"
                     title="Football Stadium"
                     description="Lorem ipsum dolor sit amet consectetur adipiscing, elit feugiat platea dictumst fames."
                     overlay={true} />
 
-                <FacilityCard image="/images/heroImages.jpg"
+                <FacilityCard image="/images/heroimages.jpg"
                     title="Football Stadium"
                     description="Lorem ipsum dolor sit amet consectetur adipiscing, elit feugiat platea dictumst fames."
                     overlay={true} />

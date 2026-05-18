@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 
 interface GetStartedSectionProps {
     tagline?: string;
@@ -14,7 +14,7 @@ export default function GetStartedSection({
     title = "Start Your Journey to \nGreatness Together",
     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
     buttonText = "Get Started",
-    backgroundImage = "/images/getstart.jpg",
+    backgroundImage = "/images/getstart.webp",
 }: GetStartedSectionProps) {
     const titleParts = title.split("\n");
 
@@ -58,3 +58,4 @@ export default function GetStartedSection({
         </section>
     );
 }
+

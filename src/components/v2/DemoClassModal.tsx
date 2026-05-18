@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { X, ChevronDown, ArrowRight, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import { captureLead } from '@/services/leadService';
+import { trackEvent } from '@/lib/trackEvent';
+import { trackLead } from '@/lib/trackLead';
 
 interface DemoClassModalProps {
   isOpen: boolean;
@@ -34,6 +36,20 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
       setSubmitStatus(null);
+
+      // Track form view - funnel start
+      if (typeof window !== 'undefined') {
+        if (window.gtag) {
+          window.gtag('event', 'form_view', {
+            form_name: 'demo_class_enrollment'
+          });
+        }
+        if (window.fbq) {
+          window.fbq('track', 'ViewContent', {
+            content_name: 'demo_class_enrollment_form'
+          });
+        }
+      }
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -96,6 +112,19 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
         grade_level: formData.grade,
         city: formData.city.trim(),
         source: typeof window !== 'undefined' ? window.location.href : ''
+      });
+
+      // Fire conversion events to GA4, Meta Pixel, and Clarity
+      trackLead({
+        form_name: 'demo_class_enrollment',
+        programme: formData.programme,
+        grade: formData.grade,
+        city: formData.city.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        student_name: formData.studentName.trim(),
+        parent_name: formData.parentName.trim(),
+        value: 0,
       });
 
       setSubmitStatus({
@@ -166,11 +195,12 @@ const DemoClassModal: React.FC<DemoClassModalProps> = ({ isOpen, onClose }) => {
         {/* Left Side: Promotional Image */}
         <div className="hidden md:block md:w-[45%] relative min-h-[600px]">
           <Image
-            src="/images/modelimage.png" // Using an existing project image
+            src="/images/modelimage.webp"
             alt="Demo Class Promotion"
-            width={500}
-            height={500}
+            width={1448}
+            height={1086}
             className='object-cover h-full w-full'
+            sizes="45vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B3C5D]/80 to-transparent flex flex-col justify-end p-8 text-white">
             <h3 className="text-3xl font-extrabold mb-2 font-heading uppercase">{"Shape Your Child's Future"}</h3>
