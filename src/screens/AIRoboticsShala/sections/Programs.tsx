@@ -7,42 +7,42 @@ const Programs = () => {
       title: "AI EXPLORERS",
       desc: "Introduction to Artificial Intelligence and Machine Learning concepts.",
       grades: "Grades 5 - 8",
-      image: "/images/roboticshala/ai_explore.png",
+      image: "/images/roboticshala/ai_explore.webp",
       borderColor: "hover:border-blue-500"
     },
     {
       title: "ROBOTICS BEGINNERS",
       desc: "Learn robotics fundamentals and build your first robot projects.",
       grades: "Grades 5 - 10",
-      image: "/images/roboticshala/robotics_beginners.png",
+      image: "/images/roboticshala/robotics_beginners.webp",
       borderColor: "hover:border-blue-500"
     },
     {
       title: "CODING MASTERS",
       desc: "Master Python, logic building and problem solving through exciting challenges.",
       grades: "Grades 5 - 12",
-      image: "/images/roboticshala/coding_master.jpg",
+      image: "/images/roboticshala/coding_master.webp",
       borderColor: "hover:border-blue-500"
     },
     {
       title: "IOT & AUTOMATION",
       desc: "Explore IoT, sensors and automation to build smart real-world solutions.",
       grades: "Grades 7 - 12",
-      image: "/images/roboticshala/iot_automation.jpg",
+      image: "/images/roboticshala/iot_automation.webp",
       borderColor: "hover:border-blue-500"
     },
     {
       title: "AI & DATA SCIENCE",
       desc: "Dive into data, analytics and AI models to solve real-life problems.",
       grades: "Grades 8 - 12",
-      image: "/images/roboticshala/ai_datascience.jpg",
+      image: "/images/roboticshala/ai_datascience.webp",
       borderColor: "hover:border-blue-500"
     },
     {
       title: "GAME & APP DEVELOPMENT",
       desc: "Design and code your own games and mobile apps.",
       grades: "Grades 6 - 12",
-      image: "/images/roboticshala/game_app_development.png",
+      image: "/images/roboticshala/game_app_development.webp",
       borderColor: "hover:border-blue-500"
     }
   ];

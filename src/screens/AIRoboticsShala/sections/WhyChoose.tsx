@@ -20,7 +20,7 @@ const WhyChoose = () => {
           {/* Column 1: Robot Image & Benefits */}
           <div className="lg:col-span-5 flex flex-col md:flex-row justify-between ">
             <Image
-              src="/images/roboticshala/airboticshala.png"
+              src="/images/roboticshala/airboticshala.webp"
               alt="Advanced Robot"
               width={300}
               height={300}
@@ -47,7 +47,7 @@ const WhyChoose = () => {
           <div className="lg:col-span-4 relative group">
             <div className="relative h-[350px] md:h-[350px] rounded-[3rem] overflow-hidden shadow-2xl">
               <Image
-                src="/images/roboticshala/building_ideas.png"
+                src="/images/roboticshala/buildingideas.webp"
                 alt="Robotics Class"
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -90,7 +90,7 @@ const WhyChoose = () => {
               <div className="relative z-10 pt-2 flex items-center gap-4">
                 <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-400">
                   <Image
-                    src="/images/parent-testimonial.png"
+                    src="/images/parenttestimonial.webp"
                     alt="Sneha Kapoor"
                     width={100}
                     height={100}
