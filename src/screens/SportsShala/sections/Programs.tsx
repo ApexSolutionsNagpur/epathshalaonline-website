@@ -53,7 +53,7 @@ const Programs = () => {
   ];
 
   return (
-    <section className="bg-[#F7F7F7] py-20">
+    <section className="bg-[#F7F7F7] py-10">
       <div className="px-4 md:px-14">
         <div className="text-center mb-12">
           <h2 className="font-oswald text-4xl md:text-5xl font-bold text-[#062B5B] uppercase tracking-wider inline-block relative after:content-[''] after:absolute after:-bottom-4 after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-[#95C11F]">

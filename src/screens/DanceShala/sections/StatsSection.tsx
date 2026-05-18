@@ -40,7 +40,7 @@ const StatsSection = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center relative z-10">
           {stats.map((stat, idx) => (
-            <div key={idx} className="flex items-center justify-center space-x-4">
+            <div key={idx} className="flex items-center justify-start md:justify-center space-x-4">
               <div className="p-3 bg-white/5 border border-white/10 rounded-full text-dance-orange">
                 {stat.icon}
               </div>

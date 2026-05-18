@@ -12,7 +12,7 @@ const StatsStrip = () => {
   ];
 
   return (
-    <section className="bg-white py-12 px-4 md:px-24 ">
+    <section className="bg-white py-8 px-4 md:px-24 ">
       <div className="">
         <div className="bg-[#072B61] rounded-[3rem] py-10 px-8 relative overflow-hidden shadow-2xl">
           {/* Subtle gradient overlay */}

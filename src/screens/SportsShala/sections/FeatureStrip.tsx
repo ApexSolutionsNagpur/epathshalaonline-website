@@ -13,7 +13,7 @@ const FeatureStrip = () => {
   return (
     <section className="bg-[#062B5B] py-8">
       <div className=" px-4 md:px-14">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
           {items.map((item, index) => (
             <div key={index} className="flex items-center gap-4 text-white group cursor-default">
               <div className="p-3 rounded-lg bg-[#95C11F]/20 group-hover:bg-[#95C11F]/40 transition-colors">

@@ -17,7 +17,7 @@ const StatsCounter = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`flex items-center gap-4 text-white p-4 ${index !== stats.length - 1 ? 'lg:border-r lg:border-white/20' : ''
+              className={`flex items-center justify-start md:justify-center gap-4 text-white p-4 ${index !== stats.length - 1 ? 'lg:border-r lg:border-white/20' : ''
                 }`}
             >
               <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-md">

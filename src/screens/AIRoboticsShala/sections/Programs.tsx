@@ -48,7 +48,7 @@ const Programs = () => {
   ];
 
   return (
-    <section className="bg-slate-50 py-24 px-4 md:px-16 ">
+    <section className="bg-slate-50 py-12 md:py-10 px-4 md:px-16 ">
       <div className="">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-3xl md:text-5xl font-oswald font-extrabold text-[#072B61] uppercase">
@@ -71,7 +71,7 @@ const Programs = () => {
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <div className="p-6 flex flex-col justify-between h-56">
+              <div className="p-6 flex flex-col justify-between h-40 md:h-56">
                 <div className="space-y-3">
                   <h3 className="font-oswald font-bold text-lg text-[#072B61] leading-tight uppercase group-hover:text-blue-600 transition-colors">
                     {program.title}

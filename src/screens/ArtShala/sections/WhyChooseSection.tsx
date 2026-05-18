@@ -32,7 +32,7 @@ const WhyChooseSection = () => {
                   <div className="mt-1">
                     <CheckCircle className="text-[#ff4f87]" size={20} />
                   </div>
-                  <span className="text-[#5f6675] font-heading font-medium group-hover:text-[#132c6b] transition-colors">
+                  <span className="text-[#5f6675] font-heading font-medium text-base group-hover:text-[#132c6b] transition-colors">
                     {point}
                   </span>
                 </li>
@@ -42,11 +42,12 @@ const WhyChooseSection = () => {
 
           {/* Center: Video Preview Card */}
           <div className="lg:col-span-4">
-            <div className="relative rounded-[40px] overflow-hidden shadow-2xl aspect-[4/5] group">
+            <div className="relative rounded-[40px] overflow-hidden shadow-2xl h-[400px] group">
               <Image
-                src="/images/artshala/video-preview.png"
+                src="/images/artshala/whyartshala.webp"
                 alt="Student Painting"
-                fill
+                width={400}
+                height={400}
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors flex flex-col items-center justify-center text-center p-6">
@@ -70,7 +71,7 @@ const WhyChooseSection = () => {
 
               <div className="relative z-10 space-y-6">
                 <Quote className="text-[#ff4f87]" size={40} fill="currentColor" />
-                <p className="text-white/90 font-heading text-lg leading-relaxed italic">
+                <p className="text-white/90 font-heading text-lg leading-relaxed italic max-w-[350px]">
                   {`"ArtShala helped me discover my passion. The teachers are amazing and the classes are so much fun!"`}
                 </p>
               </div>
