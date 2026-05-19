@@ -3,19 +3,19 @@ import BlogCard from "./components/BlogCard";
 export default function BlogSection() {
     const blogs = [
         {
-            image: "/images/heroimages.jpg",
+            image: "/images/heroimages.webp",
             title: "Playster Youth Rising",
             description:
                 "Lorem ipsum dolor sit amet consectetur, adipiscing elit nunc sociosqu.",
         },
         {
-            image: "/images/heroimages.jpg",
+            image: "/images/heroimages.webp",
             title: "Victory at Home",
             description:
                 "Lorem ipsum dolor sit amet consectetur, adipiscing elit nunc sociosqu.",
         },
         {
-            image: "/images/heroimages.jpg",
+            image: "/images/heroimages.webp",
             title: "New Season Begins",
             description:
                 "Lorem ipsum dolor sit amet consectetur, adipiscing elit nunc sociosqu.",

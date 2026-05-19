@@ -43,17 +43,6 @@ const Hero = () => {
 
         {/* Right Side Collage */}
         <div className="relative group">
-          <div className="relative z-10 scale-110 lg:scale-125 translate-x-4">
-            <Image
-              src="/images/sportsshala/hero.png"
-              alt="Sports Collage"
-              width={800}
-              height={800}
-              className="w-full h-auto drop-shadow-2xl"
-              priority
-            />
-          </div>
-
           {/* Vertical Feature List */}
           <div className="absolute top-1/2 -right-4 md:-right-8 -translate-y-2/3 flex flex-col gap-4 z-20">
             {features.map((feature, index) => (

@@ -7,7 +7,7 @@ export default function WhyJoinSectionScreen() {
             tagline="Why Join Us"
             title={"Turning Setbacks Into \nAcademic Comebacks"}
             description="At ePathshala, we believe every challenge deserves guidance. Our structured system ensures that no student falls behind, providing the right support at the right time."
-            image="/images/heroimages.jpg"
+            image="/images/heroimages.webp"
             features={[
                 {
                     title: "Individual Attention",

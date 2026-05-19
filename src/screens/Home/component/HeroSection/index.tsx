@@ -7,7 +7,7 @@ export default function HeroSection() {
         <>
             <div className="relative h-[900px] w-full mt-[54px]">
                 <Image
-                    src="/images/heroimages.jpg"
+                    src="/images/heroimages.webp"
                     alt="Hero Background"
                     fill
                     className="object-cover object-top -z-10"

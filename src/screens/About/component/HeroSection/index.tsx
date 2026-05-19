@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <PageHeroBanner
       title="About"
-      backgroundImage="/images/playground.jpg"
+      backgroundImage="/images/playground.webp"
     />
   );
 }
