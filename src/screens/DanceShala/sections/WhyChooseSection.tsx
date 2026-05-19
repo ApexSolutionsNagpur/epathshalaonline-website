@@ -15,7 +15,7 @@ const WhyChooseSection = () => {
   ];
 
   return (
-    <section className="pt-24 pb-32 md:py-24  overflow-hidden">
+    <section className="pt-10 pb-10 md:py-10  overflow-hidden">
       <div className="container mx-auto px-4 md:pl-24  md:pr-10">
         <div className="flex flex-col lg:flex-row  items-start md:items-center gap-12">
           {/* Left: Bullets */}
@@ -39,7 +39,7 @@ const WhyChooseSection = () => {
           <div className="lg:w-1/3 w-full">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl group h-94">
               <Image
-                src="/images/danceshala/why-choose.png"
+                src="/images/danceshala/why-choose.webp"
                 alt="Dance Class"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -73,7 +73,7 @@ const WhyChooseSection = () => {
               <div className="flex items-center space-x-4">
                 <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-dance-orange">
                   <Image
-                    src="/images/danceshala/priya.png"
+                    src="/images/roboticshala/parentreview.webp"
                     alt="Priya Mehta"
                     fill
                     className="object-cover"

@@ -11,7 +11,7 @@ const FeatureStrip = () => {
   ];
 
   return (
-    <section className="bg-[#062B5B] py-8">
+    <section className="bg-[#062B5B] py-8 max-sm:px-4">
       <div className=" px-4 md:px-14">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
           {items.map((item, index) => (

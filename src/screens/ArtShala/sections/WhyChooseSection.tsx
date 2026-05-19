@@ -12,12 +12,12 @@ const WhyChooseSection = () => {
   ];
 
   return (
-    <section className="bg-[#fff4f7] py-24 px-4 md:px-14">
+    <section className="bg-[#fff4f7] py-10 md:py-24 px-4 md:px-14">
       <div className="">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12  gap-12 items-center justify-between">
 
           {/* Left: Heading and Points */}
-          <div className="lg:col-span-4 space-y-8">
+          <div className="lg:col-span-3 space-y-8">
             <div className="space-y-2">
               <h2 className="text-3xl md:text-4xl font-bold text-[#132c6b] font-heading leading-tight">
                 WHY CHOOSE <br />
@@ -32,7 +32,7 @@ const WhyChooseSection = () => {
                   <div className="mt-1">
                     <CheckCircle className="text-[#ff4f87]" size={20} />
                   </div>
-                  <span className="text-[#5f6675] font-heading font-medium text-base group-hover:text-[#132c6b] transition-colors">
+                  <span className="text-[#5f6675] font-heading font-medium text-lg group-hover:text-[#132c6b] transition-colors">
                     {point}
                   </span>
                 </li>
@@ -40,15 +40,13 @@ const WhyChooseSection = () => {
             </ul>
           </div>
 
-          {/* Center: Video Preview Card */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-5">
             <div className="relative rounded-[40px] overflow-hidden shadow-2xl h-[400px] group">
               <Image
                 src="/images/artshala/whyartshala.webp"
                 alt="Student Painting"
-                width={400}
-                height={400}
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                fill
+                className="object-fit group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors flex flex-col items-center justify-center text-center p-6">
                 <button className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-[#ff4f87] shadow-xl hover:scale-110 transition-transform mb-4">
@@ -79,7 +77,7 @@ const WhyChooseSection = () => {
               <div className="relative z-10 flex items-center gap-4 pt-8 border-t border-white/10">
                 <div className="w-16 h-16 rounded-full border-2 border-[#ff4f87] overflow-hidden">
                   <Image
-                    src="/images/artshala/hero-student.png"
+                    src="/images/roboticshala/parentreview.webp"
                     alt="Ananya Sharma"
                     width={64}
                     height={64}

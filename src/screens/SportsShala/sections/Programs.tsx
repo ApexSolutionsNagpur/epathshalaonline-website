@@ -8,21 +8,21 @@ const Programs = () => {
       title: 'FOOTBALL',
       description: 'Build stamina, teamwork & game intelligence.',
       grades: 'Grades 1 - 12',
-      image: '/images/sportsshala/football.png',
+      image: '/images/sportsshala/football.webp',
       icon: '⚽',
     },
     {
       title: 'BASKETBALL',
       description: 'Enhance agility, teamwork & leadership skills.',
       grades: 'Grades 1 - 12',
-      image: '/images/sportsshala/basketball.png',
+      image: '/images/sportsshala/basketball.webp',
       icon: '🏀',
     },
     {
       title: 'BADMINTON',
       description: 'Improve speed, reflexes & concentration.',
       grades: 'Grades 1 - 12',
-      image: '/images/sportsshala/badminton.png',
+      image: '/images/sportsshala/badminton.webp',
       imgPos: 'object-[0%_0%]',
       icon: '🏸',
     },
@@ -30,7 +30,7 @@ const Programs = () => {
       title: 'CRICKET',
       description: 'Build technique, strategy & match temperament.',
       grades: 'Grades 1 - 12',
-      image: '/images/sportsshala/cricket.png',
+      image: '/images/sportsshala/cricket.webp',
       imgPos: 'object-[100%_0%]',
       icon: '🏏',
     },
@@ -38,7 +38,7 @@ const Programs = () => {
       title: 'ATHLETICS',
       description: 'Build speed, strength & endurance.',
       grades: 'Grades 1 - 12',
-      image: '/images/sportsshala/athletics.png',
+      image: '/images/sportsshala/athletics.webp',
       imgPos: 'object-[0%_100%]',
       icon: '🏃',
     },
@@ -46,7 +46,7 @@ const Programs = () => {
       title: 'FITNESS & YOGA',
       description: 'Improve flexibility, focus & overall well-being.',
       grades: 'All Grades',
-      image: '/images/sportsshala/yoga.jpg',
+      image: '/images/sportsshala/yoga.webp',
       imgPos: 'object-[100%_100%]',
       icon: '🧘',
     },
@@ -61,7 +61,7 @@ const Programs = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 md:gap-3 gap-5">
           {programs.map((program, index) => (
             <div
               key={index}

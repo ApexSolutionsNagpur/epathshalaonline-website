@@ -31,7 +31,7 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-r from-[#ff4f87] to-[#ff759f] py-12 px-4 md:px-14">
+    <section className="bg-gradient-to-r from-[#ff4f87] to-[#ff759f] pt-10 pb-14 md:py-12 px-4 md:px-14 max-md:mb-16">
       <div className="">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
           {stats.map((stat, index) => (

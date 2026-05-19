@@ -24,7 +24,7 @@ const Hero = () => {
             {/* Logo / Subtext */}
             <div className="animate-fade-in">
               <Image
-                src="/images/roboticshala/airoboticshalalogo.png"
+                src="/images/roboticshala/airoboticshalalogo.webp"
                 alt="AI Robotic Shala Logo"
                 width={300}
                 height={50}
@@ -59,7 +59,7 @@ const Hero = () => {
         <div className=" ">
           <div className="relative z-10 scale-110 lg:translate-x-10">
 
-            <div className="absolute right-0 top-1/2 -translate-y-3/8 flex flex-col gap-6 z-20  backdrop-blur-lg ">
+            <div className="absolute right-0 top-1/2 -translate-y-3/8 flex flex-col gap-6 z-20  ">
               {features.map((item, i) => (
                 <div key={i} className="flex items-center gap-4 px-6 py-2 rounded-full hover:scale-105 transition-all cursor-default">
                   <div className="w-10 h-10 rounded-full p-2 bg-white flex items-center justify-center">

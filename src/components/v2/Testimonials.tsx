@@ -34,25 +34,30 @@ const CustomNextArrow = (props: { onClick?: React.MouseEventHandler<HTMLButtonEl
 
 const Testimonials = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [slidesCount, setSlidesCount] = React.useState(2);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setSlidesCount(1);
+      } else {
+        setSlidesCount(2);
+      }
+    };
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   const settings = {
     dots: true,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 3000,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: slidesCount,
     slidesToScroll: 1,
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      }
-    ],
     customPaging: () => (
       <div className="w-3 h-3 mx-1 rounded-full bg-gray-300 mt-8"></div>
     )
@@ -80,9 +85,9 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-32 px-4 md:px-14 bg-white overflow-hidden max-md:mb-1">
+    <section className="py-10 md:py-32 px-1 md:px-14 bg-white overflow-hidden max-md:mb-8">
       <div className="">
-        <div className="text-center mb-16">
+        <div className="text-center mb-3 md:mb-16">
           <h2 className="text-2xl md:text-4xl font-extrabold text-[#0B3C5D] mb-4">
             VOICES OF OUR PROUD <span className="text-[#1E5AA8]">STUDENTS & PARENTS</span>
           </h2>

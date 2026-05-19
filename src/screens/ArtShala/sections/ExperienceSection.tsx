@@ -5,17 +5,17 @@ import Image from 'next/image';
 const ExperienceSection = () => {
   const experiences = [
     {
-      icon: '/images/artshala/brushes.png',
+      icon: '/images/artshala/brushes.webp',
       title: "EXPERT GUIDANCE",
       desc: "Learn from experienced artists and mentors."
     },
     {
-      icon: '/images/artshala/palette.png',
+      icon: '/images/artshala/palette.webp',
       title: "DIVERSE MEDIUMS",
       desc: "Explore drawing, painting, sketching, digital art and more."
     },
     {
-      icon: '/images/artshala/board.png',
+      icon: '/images/artshala/board.webp',
       title: "CREATIVE PROJECTS",
       desc: "Work on exciting projects that build confidence and skills."
     },
@@ -25,7 +25,7 @@ const ExperienceSection = () => {
       desc: "Exhibit your artwork and get recognized for your talent."
     },
     {
-      icon: '/images/artshala/people.png',
+      icon: '/images/artshala/people.webp',
       title: "ART COMMUNITY",
       desc: "Connect with like-minded creators and grow together."
     }

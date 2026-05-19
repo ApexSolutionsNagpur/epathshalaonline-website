@@ -15,7 +15,7 @@ const WhyChoose = () => {
   return (
     <section className="bg-white pt-12 pb-36 md:py-10 px-4 md:pr-24 ">
       <div className="">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 md:gap-12 items-start">
 
           {/* Column 1: Robot Image & Benefits */}
           <div className="lg:col-span-5 flex flex-col md:flex-row justify-between ">
@@ -45,12 +45,12 @@ const WhyChoose = () => {
 
           {/* Column 2: Video Card */}
           <div className="lg:col-span-4 relative group">
-            <div className="relative h-[350px] md:h-[350px] rounded-[3rem] overflow-hidden shadow-2xl">
+            <div className="relative h-[350px] md:h-[350px] rounded-[3rem] overflow-hidden shadow-2xl h-full">
               <Image
-                src="/images/roboticshala/buildingideas.webp"
+                src="/images/roboticshala/building_ideas.webp"
                 alt="Robotics Class"
                 fill
-                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                className="object-cover group-hover:scale-110 transition-transform duration-700 h-full"
               />
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-all"></div>
 
@@ -90,7 +90,7 @@ const WhyChoose = () => {
               <div className="relative z-10 pt-2 flex items-center gap-4">
                 <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-400">
                   <Image
-                    src="/images/parenttestimonial.webp"
+                    src="/images/roboticshala/parentreview.webp"
                     alt="Sneha Kapoor"
                     width={100}
                     height={100}

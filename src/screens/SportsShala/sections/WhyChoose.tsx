@@ -19,7 +19,7 @@ const WhyChoose = () => {
           <div className="relative group">
             <div className="relative z-10 transition-transform duration-500 group-hover:-rotate-3">
               <Image
-                src="/images/sportsshala/sportshala_equipment.png"
+                src="/images/sportsshala/sportshala_equipment.webp"
                 alt="Sports Equipment"
                 width={500}
                 height={500}
@@ -32,7 +32,7 @@ const WhyChoose = () => {
           {/* Center: Video Thumbnail Card */}
           <div className="space-y-10">
             <div className="text-left">
-              <h2 className="font-oswald text-4xl font-bold text-[#062B5B] uppercase leading-tight mb-6 text-nowrap">
+              <h2 className="font-oswald text-4xl font-bold text-[#062B5B] uppercase leading-tight mb-6 text-nowrap max-sm:flex flex-col">
                 WHY CHOOSE <span className="text-[#95C11F]">SPORTSSHALA?</span>
               </h2>
               <ul className="space-y-4">
@@ -49,22 +49,20 @@ const WhyChoose = () => {
 
 
           </div>
-          <div className=''>
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-video group cursor-pointer h-full">
-              <Image
-                src="/images/sportsshala/video_thumb.png"
-                alt="Building Champions"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105 h-full"
-              />
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors flex flex-col items-center justify-center text-white p-6">
-                <div className="w-16 h-16 rounded-full bg-[#95C11F] flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
-                  <Play fill="white" size={28} className="translate-x-0.5" />
-                </div>
-                <h3 className="font-oswald font-bold text-2xl uppercase tracking-wider text-center">
-                  Building Champions <br /> On & Off the Field
-                </h3>
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-video group cursor-pointer ">
+            <Image
+              src="/images/sportsshala/video_thumb.webp"
+              alt="Building Champions"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105 h-full"
+            />
+            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors flex flex-col items-center justify-center text-white p-6">
+              <div className="w-16 h-16 rounded-full bg-[#95C11F] flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                <Play fill="white" size={28} className="translate-x-0.5" />
               </div>
+              <h3 className="font-oswald font-bold text-2xl uppercase tracking-wider text-center">
+                Building Champions <br /> On & Off the Field
+              </h3>
             </div>
           </div>
 
@@ -77,14 +75,14 @@ const WhyChoose = () => {
             </div>
 
             <div className="relative z-10 space-y-8">
-              <p className="font-body text-xl italic leading-relaxed font-light opacity-90">
+              <p className="font-body text-base italic leading-relaxed font-light opacity-90">
                 {`"SportsShala has helped me become more confident, disciplined and passionate about sports. The coaches are amazing!"`}
               </p>
 
               <div className="flex items-center gap-5 pt-6 border-t border-white/10">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-[#95C11F] p-0.5 shadow-xl">
                   <Image
-                    src="/images/sportsshala/student.png"
+                    src="/images/sportsshala/student.webp"
                     alt="Student"
                     fill
                     className="object-cover rounded-full"

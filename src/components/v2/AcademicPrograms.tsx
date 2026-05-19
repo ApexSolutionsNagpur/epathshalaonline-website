@@ -52,7 +52,7 @@ const AcademicPrograms = () => {
           <div className="w-24 h-1 bg-[#FFC107] mx-auto mt-6 rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-5 md:gap-2">
           {programs.map((program, index) => (
             <div
               key={index}
