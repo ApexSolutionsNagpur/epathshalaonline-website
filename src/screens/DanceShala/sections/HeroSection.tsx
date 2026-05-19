@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import React from 'react';
 import Image from 'next/image';
 import { Sparkles, Star, ShieldCheck, Heart, UserCheck, Zap } from 'lucide-react';
@@ -14,11 +14,15 @@ const HeroSection = () => {
   ];
 
   return (
-    <section
-      className="relative pt-1 pb-20 overflow-hidden bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/images/danceshala/dancehero.webp')" }}
-    >
-
+    <section className="relative z-0 pt-1 pb-20 overflow-hidden">
+      <Image
+        src="/images/danceshala/dancehero.webp"
+        alt="DanceShala Background"
+        fill
+        priority
+        className="object-cover object-center -z-10"
+        sizes="100vw"
+      />
       <div className=" mx-auto pl-24 pr-20">
         <div className="flex flex-col md:flex-row items-center justify-between">
           {/* Left Content */}

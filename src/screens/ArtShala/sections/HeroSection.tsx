@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { Pencil, Image as ImageIcon, Palette, GraduationCap, Compass, Heart, Star } from 'lucide-react';
 
@@ -11,9 +11,15 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white pt-1 pb-24 px-4 md:px-24 flex items-center  bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/images/artshala/art_hero.webp')" }}
-    >
+    <section className="relative overflow-hidden z-0 pt-1 pb-24 px-4 md:px-24 flex items-center">
+      <Image
+        src="/images/artshala/art_hero.webp"
+        alt="ArtShala Background"
+        fill
+        priority
+        className="object-cover object-center -z-10"
+        sizes="100vw"
+      />
       <div className="relative z-10  grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
         <div className="space-y-1">
@@ -23,6 +29,7 @@ const HeroSection = () => {
             width={300}
             height={50}
             className="h-auto w-auto"
+            priority
           />
 
           <div className="space-y-6">

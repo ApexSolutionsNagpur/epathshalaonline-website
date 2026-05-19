@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { CheckCircle2 } from 'lucide-react';
 
@@ -6,10 +6,15 @@ const Hero = () => {
   const features = ['Discipline', 'Teamwork', 'Fitness', 'Focus', 'Confidence'];
 
   return (
-    <section
-      className="relative overflow-hidden pt-1 pb-20 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/images/sportsshala/sport_hero.webp')" }}
-    >
+    <section className="relative z-0 overflow-hidden pt-1 pb-20">
+      <Image
+        src="/images/sportsshala/sport_hero.webp"
+        alt="SportsShala Background"
+        fill
+        priority
+        className="object-cover object-center -z-10"
+        sizes="100vw"
+      />
       <div className=" px-4 md:px-14 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side Content */}
         <div className="space-y-6 z-10">
@@ -19,6 +24,7 @@ const Hero = () => {
             width={300}
             height={50}
             className="h-24 md:h-100 w-auto"
+            priority
           />
 
           <div className="space-y-2">
