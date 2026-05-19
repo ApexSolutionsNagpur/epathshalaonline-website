@@ -7,34 +7,30 @@ const StatsStrip = () => {
     { icon: <Rocket size={24} />, value: "200+", label: "Projects Built" },
     { icon: <GraduationCap size={24} />, value: "50+", label: "Expert Mentors" },
     { icon: <Award size={24} />, value: "95%", label: "Skill Improvement" },
-    { icon: <Globe size={24} />, value: "25+", label: "Competitions Won" },
     { icon: <MapPin size={24} />, value: "20+", label: "Cities & Growing" },
   ];
 
   return (
-    <section className="bg-white py-8 px-4 md:px-24 ">
-      <div className="">
-        <div className="bg-[#072B61] rounded-[3rem] py-10 px-8 relative overflow-hidden shadow-2xl">
-          {/* Subtle gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-transparent to-blue-500/20 pointer-events-none"></div>
-
-          <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {stats.map((stat, i) => (
-              <div key={i} className="flex flex-col items-center text-center space-y-3 group">
-                <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-white backdrop-blur-md group-hover:scale-110 transition-transform duration-300 shadow-inner">
-                  {stat.icon}
-                </div>
-                <div>
-                  <div className="text-2xl md:text-3xl font-oswald font-extrabold text-white leading-none mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-[10px] md:text-xs font-medium text-blue-200 uppercase tracking-widest">
-                    {stat.label}
-                  </div>
-                </div>
+    <section className="mb-10 relative z-20 md:px-10">
+      <div className="bg-[linear-gradient(90deg,#052b5b_0%,#0a3c63_20%,#1e5aa8_55%,#062b5b_80%,#062b5b_100%)] md:rounded-full w-full shadow-2xl ">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-0 px-2 py-6">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              className={`flex items-center justify-start md:justify-center gap-4 text-white p-4 ${index !== stats.length - 1 ? 'lg:border-r lg:border-white/20' : ''
+                }`}
+            >
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-md">
+                {React.cloneElement(stat.icon, { className: "text-white" })}
               </div>
-            ))}
-          </div>
+              <div className="text-left">
+                <h3 className="font-oswald font-bold text-2xl md:text-3xl tracking-tight leading-none">{stat.value}</h3>
+                <p className="text-white/80 text-[9px] md:text-[10px] font-bold uppercase tracking-wider font-oswald leading-tight mt-1 max-w-[100px]">
+                  {stat.label}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

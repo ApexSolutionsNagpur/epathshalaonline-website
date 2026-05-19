@@ -4,49 +4,48 @@ import { Users, GraduationCap, Palette, Presentation, MapPin } from 'lucide-reac
 const StatsSection = () => {
   const stats = [
     {
-      icon: <Users size={32} />,
+      icon: <Users size={24} />,
       number: "2,000+",
       label: "Young Artists"
     },
     {
-      icon: <GraduationCap size={32} />,
+      icon: <GraduationCap size={24} />,
       number: "100+",
       label: "Expert Mentors"
     },
     {
-      icon: <Palette size={32} />,
+      icon: <Palette size={24} />,
       number: "500+",
       label: "Artworks Created"
     },
     {
-      icon: <Presentation size={32} />,
+      icon: <Presentation size={24} />,
       number: "50+",
       label: "Exhibitions"
     },
     {
-      icon: <MapPin size={32} />,
+      icon: <MapPin size={24} />,
       number: "25+",
       label: "Cities & Growing"
     }
   ];
 
   return (
-    <section className="bg-gradient-to-r from-[#ff4f87] to-[#ff759f] pt-10 pb-14 md:py-12 px-4 md:px-14 max-md:mb-16">
-      <div className="">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
+    <section className="mb-10 relative z-20 md:px-10">
+      <div className="bg-[linear-gradient(90deg,#C71E6E_0%,#C71E6E_20%,#ff4f87_55%,#C71E6E_80%,#C71E6E_100%)] md:rounded-full w-full shadow-2xl ">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-0 px-2 py-6">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center text-white space-y-3 group"
+              className={`flex items-center justify-start md:justify-center gap-4 text-white p-4 ${index !== stats.length - 1 ? 'lg:border-r lg:border-white/20' : ''
+                }`}
             >
-              <div className="p-3 bg-white/20 rounded-2xl group-hover:bg-white group-hover:text-[#ff4f87] transition-all duration-300">
-                {stat.icon}
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-md">
+                {React.cloneElement(stat.icon, { className: "text-white" })}
               </div>
-              <div>
-                <h3 className="text-2xl md:text-3xl font-bold font-heading">
-                  {stat.number}
-                </h3>
-                <p className="text-white/80 font-heading text-sm font-medium uppercase tracking-wider">
+              <div className="text-left">
+                <h3 className="font-oswald font-bold text-2xl md:text-3xl tracking-tight leading-none">{stat.number}</h3>
+                <p className="text-white/80 text-[9px] md:text-[10px] font-bold uppercase tracking-wider font-oswald leading-tight mt-1 max-w-[100px]">
                   {stat.label}
                 </p>
               </div>

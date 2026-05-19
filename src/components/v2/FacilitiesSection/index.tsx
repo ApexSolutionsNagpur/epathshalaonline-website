@@ -5,7 +5,7 @@ export default function FacilitiesSection() {
         <section className="px-4 md:px-24 mb-6">
 
             {/* Header */}
-            <div className="flex flex-col md:flex-row md:items-center md:justify-center my-5 md:my-14 text-center">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-center my-5 md:my-10 text-center">
 
                 <div>
                     <p className="text-blue-600 uppercase tracking-widest text-sm font-semibold mb-4">

@@ -12,8 +12,8 @@ export default function ArtShalaScreen() {
       <HeroSection />
       <ExperienceSection />
       <ProgramsSection />
-      <WhyChooseSection />
       <StatsSection />
+      <WhyChooseSection />
       <CTASection />
     </div>
   );
