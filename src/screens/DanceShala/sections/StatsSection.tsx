@@ -33,7 +33,7 @@ const StatsSection = () => {
 
   return (
     <section className="mb-10 relative z-20 md:px-10">
-      <div className="bg-[linear-gradient(90deg,#3B0A57_0%,#3B0A57_20%,#FF7A00_55%,#3B0A57_80%,#3B0A57_100%)] md:rounded-full w-full shadow-2xl relative overflow-hidden">
+      <div className="bg-[linear-gradient(90deg,#6A0DAD_0%,#3B0A57_20%,#FF7A00_55%,#3B0A57_80%,#3B0A57_100%)] md:rounded-full w-full shadow-2xl relative overflow-hidden">
         {/* Subtle Decorative Elements */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-dance-orange/10 rounded-full -mr-16 -mt-16 blur-2xl" />
         <div className="absolute bottom-0 left-0 w-32 h-32 bg-dance-royal/20 rounded-full -ml-16 -mb-16 blur-2xl" />

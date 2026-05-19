@@ -32,7 +32,7 @@ const StatsSection = () => {
 
   return (
     <section className="mb-10 relative z-20 md:px-10">
-      <div className="bg-[linear-gradient(90deg,#C71E6E_0%,#C71E6E_20%,#ff4f87_55%,#C71E6E_80%,#C71E6E_100%)] md:rounded-full w-full shadow-2xl ">
+      <div className="bg-[linear-gradient(90deg,#ff4f87_0%,#C71E6E_20%,#ff4f87_55%,#C71E6E_80%,#C71E6E_100%)] md:rounded-full w-full shadow-2xl ">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-0 px-2 py-6">
           {stats.map((stat, index) => (
             <div
