@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "youth sports India",
   ],
   icons: {
-    icon: "/images/sportsshala/sportshalalogo.png",
+    icon: "/images/sportsshala/sportshalalogo.webp",
   },
   openGraph: {
     title: "SportsShala | ePathshala Online Sports Academy",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
       "Play Today. Lead Tomorrow. The perfect arena for young champions to train, compete and excel.",
     images: [
       {
-        url: "/images/sportsshala/sportshalalogo.png",
+        url: "/images/sportsshala/sportshalalogo.webp",
         alt: "SportsShala Logo",
       },
     ],

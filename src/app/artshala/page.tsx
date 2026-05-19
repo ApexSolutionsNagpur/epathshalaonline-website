@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "online drawing classes",
   ],
   icons: {
-    icon: "/images/artshala/artshalalogo.png",
+    icon: "/images/artshala/artshalalogo.webp",
   },
   openGraph: {
     title: "ArtShala | Unleash Creativity. Shape Your Future.",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
       "The creative space for young artists to learn, explore and express their imagination.",
     images: [
       {
-        url: "/images/artshala/artshalalogo.png",
+        url: "/images/artshala/artshalalogo.webp",
         alt: "ArtShala Logo",
       },
     ],

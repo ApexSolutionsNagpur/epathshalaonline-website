@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "classical dance online",
   ],
   icons: {
-    icon: "/images/danceshala/danceshalalogo.png",
+    icon: "/images/danceshala/danceshalalogo.webp",
   },
   openGraph: {
     title: "DanceShala | Premium Dance Academy",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       "Move Today, Shine Tomorrow. Expert training in Hip Hop, Bollywood, Classical, and more.",
     images: [
       {
-        url: "/images/danceshala/danceshalalogo.png",
+        url: "/images/danceshala/danceshalalogo.webp",
         alt: "DanceShala Logo",
       },
     ],

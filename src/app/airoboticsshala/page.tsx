@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "AIRoboticsShala ePathshala",
   ],
   icons: {
-    icon: "/images/roboticshala/airoboticshalalogo.png",
+    icon: "/images/roboticshala/airoboticshalalogo.webp",
   },
   openGraph: {
     title: "AIRoboticsShala | Code. Create. Innovate.",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
       "Empowering young minds to explore AI, Robotics, and Coding through hands-on learning and real-world projects.",
     images: [
       {
-        url: "/images/roboticshala/airoboticshalalogo.png",
+        url: "/images/roboticshala/airoboticshalalogo.webp",
         alt: "AIRoboticsShala Logo",
       },
     ],

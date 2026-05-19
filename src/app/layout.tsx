@@ -72,7 +72,7 @@ export const metadata: Metadata = {
       "India's recognized online CBSE school with AI/Robotics, Sports, Art & Dance programs. Admissions open for 2026-27.",
     images: [
       {
-        url: "/images/footerlogo.png",
+        url: "/images/footerlogo.webp",
         width: 1200,
         height: 630,
         alt: "ePathshala Online School",
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     title: "ePathshala Online | India's Recognized Online School",
     description:
       "India's recognized online CBSE school with AI/Robotics, Sports, Art & Dance programs. Admissions open for 2026-27.",
-    images: ["/images/footerlogo.png"],
+    images: ["/images/footerlogo.webp"],
   },
 
   // ── Canonical ──
