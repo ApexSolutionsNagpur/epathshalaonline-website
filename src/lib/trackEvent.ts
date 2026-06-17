@@ -5,6 +5,12 @@
  * Usage:
  *   import { trackEvent } from '@/lib/trackEvent';
  *   trackEvent('generate_lead', { form_name: 'demo_class', city: 'Mumbai' });
+ *
+ * Survey 2026 events used in this codebase:
+ *   - video_complete      → user finished the mandatory intro video
+ *   - form_start          → user first interacted with any wizard field
+ *   - survey_step_complete → user advanced past a wizard step (pass { step })
+ *   - form_submit         → user successfully submitted the survey
  */
 
 // GA4 event name → Meta Pixel standard event mapping

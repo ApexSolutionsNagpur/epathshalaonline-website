@@ -12,6 +12,7 @@
   --font-body: var(--font-inter);
   --font-sans: var(--font-inter);
   --font-oswald: var(--font-oswald);
+  --font-noto-sans: var(--font-noto-sans);
 
   /* DanceShala Colors */
   --color-dance-orange: #FF7A00;

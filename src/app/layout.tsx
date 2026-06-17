@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Poppins, Oswald } from "next/font/google";
+import { Inter, Poppins, Oswald, Noto_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/v2/Header";
 import "slick-carousel/slick/slick.css";
@@ -31,6 +31,14 @@ const oswald = Oswald({
   variable: "--font-oswald",
   subsets: ["latin"],
   weight: ["500", "600", "700"],
+  display: "swap",
+  preload: true,
+});
+
+const notoSans = Noto_Sans({
+  variable: "--font-noto-sans",
+  subsets: ["latin", "devanagari"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
   preload: true,
 });
@@ -129,7 +137,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${poppins.variable} ${oswald.variable} antialiased font-body`}
+        className={`${inter.variable} ${poppins.variable} ${oswald.variable} ${notoSans.variable} antialiased font-body`}
       >
         <Analytics />
         <RouteTracker />
