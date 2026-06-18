@@ -48,6 +48,7 @@ const VideoGate = ({ language, onComplete }: VideoGateProps) => {
         videoId: YOUTUBE_VIDEO_ID,
         playerVars: {
           autoplay: 1, // Try to autoplay
+          mute: 1, // Muted is required for autoplay without user interaction in modern browsers
           controls: 0, // Hides controls to prevent skipping
           disablekb: 1,
           rel: 0,
