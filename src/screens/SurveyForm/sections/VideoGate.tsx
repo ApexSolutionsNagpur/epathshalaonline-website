@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useState, useEffect, useCallback } from 'react';
+import { Volume2 } from 'lucide-react';
 import { trackEvent } from '@/lib/trackEvent';
 import { surveyTranslations } from '@/lib/surveyTranslations';
 import type { Language } from '@/types/survey';
@@ -27,6 +28,9 @@ const VideoGate = ({ language, onComplete }: VideoGateProps) => {
   const [toast, setToast] = useState<string | null>(null);
   const [videoEnded, setVideoEnded] = useState(false);
   const [isReady, setIsReady] = useState(false);
+  
+  // Track if video is playing muted due to browser autoplay policies
+  const [isMuted, setIsMuted] = useState(true);
 
   const [progressText, setProgressText] = useState('0:00 / 0:00');
   const [progressPercent, setProgressPercent] = useState(0);
@@ -48,7 +52,7 @@ const VideoGate = ({ language, onComplete }: VideoGateProps) => {
         videoId: YOUTUBE_VIDEO_ID,
         playerVars: {
           autoplay: 1, // Try to autoplay
-          mute: 1, // Muted is required for autoplay without user interaction in modern browsers
+          mute: 1, // MUST be muted for browsers to allow autoplay without prior user interaction
           controls: 0, // Hides controls to prevent skipping
           disablekb: 1,
           rel: 0,
@@ -128,6 +132,14 @@ const VideoGate = ({ language, onComplete }: VideoGateProps) => {
     }, 1000);
   }, [onComplete, t.videoComplete]);
 
+  const handleUnmute = useCallback(() => {
+    if (playerRef.current && typeof playerRef.current.unMute === 'function') {
+      playerRef.current.unMute();
+      playerRef.current.seekTo(0); // Restart from beginning so they don't miss anything
+      setIsMuted(false);
+    }
+  }, []);
+
   // Auto-hide toast after 5 seconds
   useEffect(() => {
     if (!toast) return;
@@ -148,8 +160,23 @@ const VideoGate = ({ language, onComplete }: VideoGateProps) => {
           {/* Overlay to block clicks on the iframe itself, keeping it un-seekable */}
           <div className="absolute inset-0 z-10" />
 
+          {/* Tap for Sound Overlay */}
+          {isMuted && !videoEnded && (
+            <div
+              onClick={handleUnmute}
+              className="absolute inset-0 z-20 flex items-center justify-center cursor-pointer bg-transparent"
+            >
+              <div className="bg-black/60 backdrop-blur-sm text-white px-6 py-4 rounded-full font-bold animate-pulse flex items-center gap-3 shadow-2xl hover:scale-105 transition-transform">
+                <Volume2 size={24} />
+                <span className="text-lg">
+                  {language === 'hi' ? 'आवाज़ के लिए टैप करें' : 'Tap for Sound'}
+                </span>
+              </div>
+            </div>
+          )}
+
           {/* Progress Overlay at bottom */}
-          <div className="absolute bottom-0 left-0 w-full z-30 p-4 bg-gradient-to-t from-black/80 to-transparent">
+          <div className="absolute bottom-0 left-0 w-full z-30 p-4 bg-gradient-to-t from-black/80 to-transparent pointer-events-none">
             <p className="text-xs font-bold text-white mb-2 drop-shadow-md">
               Video: {progressText}
             </p>

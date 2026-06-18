@@ -58,8 +58,8 @@ const SurveyWizard = ({ language, initialSchoolName, isActive, onSubmitComplete 
 
   useEffect(() => {
     // Smooth scroll to top when it becomes active
-    if (isActive) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (isActive && wizardRef.current) {
+      wizardRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }, [isActive]);
 

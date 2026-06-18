@@ -36,12 +36,14 @@ function SurveyFormInner() {
   }
 
   return (
-    <SurveyWizard
-      language={selectedLanguage}
-      initialSchoolName={schoolParam || undefined}
-      isActive={showWizard}
-      onSubmitComplete={() => setSubmitted(true)}
-    />
+    <div className="h-[100dvh] w-full overflow-y-auto overflow-x-hidden bg-[#F5F7FA]">
+      <SurveyWizard
+        language={selectedLanguage}
+        initialSchoolName={schoolParam || undefined}
+        isActive={showWizard}
+        onSubmitComplete={() => setSubmitted(true)}
+      />
+    </div>
   );
 }
 
