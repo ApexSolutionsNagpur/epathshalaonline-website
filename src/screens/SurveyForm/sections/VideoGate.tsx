@@ -16,17 +16,16 @@ declare global {
 
 interface VideoGateProps {
   language: Language;
-  onVideoComplete: () => void;
-  onStartWizard: () => void;
+  onComplete: () => void;
 }
 
 const YOUTUBE_VIDEO_ID = 'XDR5GBEf0BM'; // Requested by user
 
-const VideoGate = ({ language, onVideoComplete, onStartWizard }: VideoGateProps) => {
+const VideoGate = ({ language, onComplete }: VideoGateProps) => {
   const t = surveyTranslations[language];
   const playerRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [showPlayOverlay, setShowPlayOverlay] = useState(true); // Start showing overlay to ensure user interaction for autoplay
+  const [showPlayOverlay, setShowPlayOverlay] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const [videoEnded, setVideoEnded] = useState(false);
   const [isReady, setIsReady] = useState(false);
@@ -50,7 +49,7 @@ const VideoGate = ({ language, onVideoComplete, onStartWizard }: VideoGateProps)
       playerRef.current = new window.YT.Player(containerRef.current, {
         videoId: YOUTUBE_VIDEO_ID,
         playerVars: {
-          autoplay: 0,
+          autoplay: 1, // Try to autoplay
           controls: 0, // Hides controls to prevent skipping
           disablekb: 1,
           rel: 0,
@@ -59,8 +58,16 @@ const VideoGate = ({ language, onVideoComplete, onStartWizard }: VideoGateProps)
           playsinline: 1,
         },
         events: {
-          onReady: () => {
+          onReady: (event: any) => {
             setIsReady(true);
+            // Attempt autoplay
+            event.target.playVideo();
+            // If it doesn't play shortly, assume autoplay blocked
+            setTimeout(() => {
+              if (playerRef.current && playerRef.current.getPlayerState() !== window.YT.PlayerState.PLAYING) {
+                setShowPlayOverlay(true);
+              }
+            }, 1000);
           },
           onStateChange: (event: any) => {
             if (event.data === window.YT.PlayerState.ENDED) {
@@ -70,8 +77,11 @@ const VideoGate = ({ language, onVideoComplete, onStartWizard }: VideoGateProps)
             } else if (event.data === window.YT.PlayerState.PLAYING) {
               setShowPlayOverlay(false);
               setIsPlaying(true);
-            } else {
-              setIsPlaying(false);
+            } else if (event.data === window.YT.PlayerState.PAUSED || event.data === window.YT.PlayerState.UNSTARTED) {
+              if (!videoEnded) {
+                setIsPlaying(false);
+                setShowPlayOverlay(true);
+              }
             }
           },
         },
@@ -89,7 +99,7 @@ const VideoGate = ({ language, onVideoComplete, onStartWizard }: VideoGateProps)
         playerRef.current.destroy();
       }
     };
-  }, []);
+  }, [videoEnded]);
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -118,13 +128,17 @@ const VideoGate = ({ language, onVideoComplete, onStartWizard }: VideoGateProps)
   const handleEnded = useCallback(() => {
     trackEvent('video_complete', { form: 'survey_2026' });
     setVideoEnded(true);
-    onVideoComplete();
     setToast(t.videoComplete);
-  }, [onVideoComplete, t.videoComplete]);
+    // Add small delay to let user see completion state before automatically hiding
+    setTimeout(() => {
+      onComplete();
+    }, 1000);
+  }, [onComplete, t.videoComplete]);
 
   const handlePlayClick = useCallback(() => {
     if (playerRef.current && typeof playerRef.current.playVideo === 'function') {
       playerRef.current.playVideo();
+      setShowPlayOverlay(false);
     }
   }, []);
 
@@ -135,75 +149,52 @@ const VideoGate = ({ language, onVideoComplete, onStartWizard }: VideoGateProps)
     return () => clearTimeout(id);
   }, [toast]);
 
-  const handleStartFormClick = () => {
-    trackEvent('fill_form_click', { form: 'survey_2026' });
-    onStartWizard();
-  };
-
   return (
     <>
-      <section id="survey-video-gate" className="bg-white pb-8 px-4 md:px-14">
-        <div className="max-w-[1280px] mx-auto">
-          <div className="max-w-2xl mx-auto flex flex-col items-center">
-            <div className="w-full relative rounded-2xl overflow-hidden bg-black shadow-xl aspect-video">
-              
-              {/* YouTube Player Container */}
-              <div className="absolute inset-0 w-full h-full pointer-events-none">
-                <div ref={containerRef} className="w-full h-full" />
-              </div>
-
-              {/* Overlay to block clicks on the iframe itself, keeping it un-seekable */}
-              <div className="absolute inset-0 z-10" />
-
-              {/* Play Overlay */}
-              {showPlayOverlay && !videoEnded && (
-                <div
-                  onClick={handlePlayClick}
-                  className="absolute inset-0 z-20 flex items-center justify-center bg-black/40 cursor-pointer"
-                >
-                  <div className="bg-white/20 backdrop-blur-md rounded-full p-6 hover:bg-white/30 transition-all flex flex-col items-center gap-2">
-                    <Play className="w-12 h-12 text-white fill-white" />
-                    <span className="text-white font-bold">{t.videoTapToPlay}</span>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <div className="mt-4 w-full">
-              <div className="flex items-center justify-between mb-2">
-                <p className="text-xs font-bold text-[#6B7280]">
-                  {t.videoProgress}: {progressText}
-                </p>
-                {videoEnded && (
-                  <span className="text-xs font-bold text-green-600 bg-green-50 px-3 py-1 rounded-full">
-                    ✓ {language === 'hi' ? 'पूरा हुआ' : 'Watched'}
-                  </span>
-                )}
-              </div>
-              <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
-                <div 
-                  className="h-full bg-[#1E5AA8] transition-all duration-1000 ease-linear"
-                  style={{ width: `${progressPercent}%` }}
-                />
-              </div>
-            </div>
-
-            {videoEnded && (
-              <div className="mt-8 animate-in fade-in slide-in-from-bottom-4">
-                <button
-                  onClick={handleStartFormClick}
-                  className="bg-[#FFC107] text-[#0B3C5D] font-extrabold py-4 px-10 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 uppercase tracking-widest flex items-center gap-2 animate-pulse hover:animate-none ring-4 ring-[#FFC107]/30"
-                >
-                  {t.fillSurveyForm || (language === 'hi' ? 'सर्वे फॉर्म भरें' : 'Fill Survey Form')}
-                </button>
-              </div>
-            )}
+      <section id="survey-video-gate" className="bg-black min-h-screen w-full flex flex-col justify-center items-center overflow-hidden fixed inset-0 z-[100]">
+        <div className="w-full max-w-[430px] h-[100dvh] relative flex flex-col bg-black overflow-hidden shadow-2xl">
+          
+          {/* YouTube Player Container */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div ref={containerRef} className="w-full aspect-video" />
           </div>
+
+          {/* Overlay to block clicks on the iframe itself, keeping it un-seekable */}
+          <div className="absolute inset-0 z-10" />
+
+          {/* Play Overlay */}
+          {showPlayOverlay && !videoEnded && (
+            <div
+              onClick={handlePlayClick}
+              className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/60 cursor-pointer backdrop-blur-sm"
+            >
+              <div className="bg-white/20 rounded-full p-6 hover:bg-white/30 transition-all flex items-center justify-center mb-4">
+                <Play className="w-12 h-12 text-white fill-white" />
+              </div>
+              <span className="text-white font-bold text-lg text-center px-4">
+                {language === 'hi' ? 'Video shuru karne ke liye tap karein' : 'Tap to start video'}
+              </span>
+            </div>
+          )}
+
+          {/* Progress Overlay at bottom */}
+          <div className="absolute bottom-0 left-0 w-full z-30 p-4 bg-gradient-to-t from-black/80 to-transparent">
+            <p className="text-xs font-bold text-white mb-2 drop-shadow-md">
+              Video: {progressText}
+            </p>
+            <div className="h-1 w-full bg-white/30 rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-white transition-all duration-1000 ease-linear"
+                style={{ width: `${progressPercent}%` }}
+              />
+            </div>
+          </div>
+
         </div>
       </section>
 
       {toast && (
-        <div className="fixed top-24 left-1/2 -translate-x-1/2 z-50 bg-[#0B3C5D] text-white px-6 py-3 rounded-2xl shadow-2xl text-sm font-bold animate-in fade-in slide-in-from-top-2">
+        <div className="fixed top-24 left-1/2 -translate-x-1/2 z-[110] bg-[#0B3C5D] text-white px-6 py-3 rounded-2xl shadow-2xl text-sm font-bold animate-in fade-in slide-in-from-top-2">
           {toast}
         </div>
       )}
