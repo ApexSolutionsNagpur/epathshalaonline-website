@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { Play } from 'lucide-react';
 import { trackEvent } from '@/lib/trackEvent';
 import { surveyTranslations } from '@/lib/surveyTranslations';
 import type { Language } from '@/types/survey';
@@ -25,7 +24,6 @@ const VideoGate = ({ language, onComplete }: VideoGateProps) => {
   const t = surveyTranslations[language];
   const playerRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [showPlayOverlay, setShowPlayOverlay] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const [videoEnded, setVideoEnded] = useState(false);
   const [isReady, setIsReady] = useState(false);
@@ -62,12 +60,6 @@ const VideoGate = ({ language, onComplete }: VideoGateProps) => {
             setIsReady(true);
             // Attempt autoplay
             event.target.playVideo();
-            // If it doesn't play shortly, assume autoplay blocked
-            setTimeout(() => {
-              if (playerRef.current && playerRef.current.getPlayerState() !== window.YT.PlayerState.PLAYING) {
-                setShowPlayOverlay(true);
-              }
-            }, 1000);
           },
           onStateChange: (event: any) => {
             if (event.data === window.YT.PlayerState.ENDED) {
@@ -75,12 +67,12 @@ const VideoGate = ({ language, onComplete }: VideoGateProps) => {
               setProgressPercent(100);
               handleEnded();
             } else if (event.data === window.YT.PlayerState.PLAYING) {
-              setShowPlayOverlay(false);
               setIsPlaying(true);
             } else if (event.data === window.YT.PlayerState.PAUSED || event.data === window.YT.PlayerState.UNSTARTED) {
               if (!videoEnded) {
                 setIsPlaying(false);
-                setShowPlayOverlay(true);
+                // Force play if paused unintentionally before ended
+                event.target.playVideo();
               }
             }
           },
@@ -135,13 +127,6 @@ const VideoGate = ({ language, onComplete }: VideoGateProps) => {
     }, 1000);
   }, [onComplete, t.videoComplete]);
 
-  const handlePlayClick = useCallback(() => {
-    if (playerRef.current && typeof playerRef.current.playVideo === 'function') {
-      playerRef.current.playVideo();
-      setShowPlayOverlay(false);
-    }
-  }, []);
-
   // Auto-hide toast after 5 seconds
   useEffect(() => {
     if (!toast) return;
@@ -152,30 +137,15 @@ const VideoGate = ({ language, onComplete }: VideoGateProps) => {
   return (
     <>
       <section id="survey-video-gate" className="bg-black min-h-screen w-full flex flex-col justify-center items-center overflow-hidden fixed inset-0 z-[100]">
-        <div className="w-full max-w-[430px] h-[100dvh] relative flex flex-col bg-black overflow-hidden shadow-2xl">
+        <div className="w-full h-full relative flex flex-col justify-center items-center bg-black overflow-hidden">
           
-          {/* YouTube Player Container */}
+          {/* YouTube Player Container - Full Screen Centered */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div ref={containerRef} className="w-full aspect-video" />
+            <div ref={containerRef} className="w-full h-full" />
           </div>
 
           {/* Overlay to block clicks on the iframe itself, keeping it un-seekable */}
           <div className="absolute inset-0 z-10" />
-
-          {/* Play Overlay */}
-          {showPlayOverlay && !videoEnded && (
-            <div
-              onClick={handlePlayClick}
-              className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/60 cursor-pointer backdrop-blur-sm"
-            >
-              <div className="bg-white/20 rounded-full p-6 hover:bg-white/30 transition-all flex items-center justify-center mb-4">
-                <Play className="w-12 h-12 text-white fill-white" />
-              </div>
-              <span className="text-white font-bold text-lg text-center px-4">
-                {language === 'hi' ? 'Video shuru karne ke liye tap karein' : 'Tap to start video'}
-              </span>
-            </div>
-          )}
 
           {/* Progress Overlay at bottom */}
           <div className="absolute bottom-0 left-0 w-full z-30 p-4 bg-gradient-to-t from-black/80 to-transparent">
