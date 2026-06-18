@@ -21,6 +21,10 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  if (pathname === '/survey-form-2026') {
+    return null;
+  }
+
   const isSportsShala = pathname === '/sportsshala';
   const isAIRoboticsShala = pathname === '/airoboticsshala';
   const isArtShala = pathname === '/artshala';
