@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useCallback, useRef, useEffect } from 'react';
+import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { surveyTranslations } from '@/lib/surveyTranslations';
 import { trackEvent } from '@/lib/trackEvent';
@@ -56,9 +57,9 @@ const SurveyWizard = ({ language, initialSchoolName, isActive, onSubmitComplete 
   const wizardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Smooth scroll to wizard when it becomes active
-    if (isActive && wizardRef.current) {
-      wizardRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Smooth scroll to top when it becomes active
+    if (isActive) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [isActive]);
 
@@ -179,6 +180,21 @@ const SurveyWizard = ({ language, initialSchoolName, isActive, onSubmitComplete 
     <section id="survey-wizard" ref={wizardRef} className="py-8 px-4 md:px-14">
       <div className="max-w-[1280px] mx-auto">
         <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+          
+          {/* Compact Wizard Header */}
+          <div className="bg-white px-6 py-4 flex items-center justify-between border-b border-gray-100">
+            <Image
+              src="/images/logo.webp"
+              alt="ePathshala Logo"
+              width={120}
+              height={40}
+              className="h-10 w-auto"
+            />
+            <h1 className="text-lg md:text-xl font-extrabold text-[#0B3C5D] font-heading">
+              Parent Survey 2026
+            </h1>
+          </div>
+
           {/* Progress bar */}
           <div className="h-1.5 bg-gray-100">
             <div

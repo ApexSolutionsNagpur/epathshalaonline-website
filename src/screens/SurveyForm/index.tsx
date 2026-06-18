@@ -14,51 +14,34 @@ function SurveyFormInner() {
   const schoolParam = searchParams.get('school');
   const initialLang: Language = langParam === 'hi' ? 'hi' : 'en';
 
-  const [language, setLanguage] = useState<Language>(initialLang);
-  const [videoWatched, setVideoWatched] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState<"en" | "hi">(initialLang);
+  const [videoCompleted, setVideoCompleted] = useState(false);
   const [showWizard, setShowWizard] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleVideoComplete = useCallback(() => {
-    setVideoWatched(true);
-  }, []);
+  if (submitted) {
+    return <ThankYouScreen language={selectedLanguage} />;
+  }
 
-  const handleSubmitComplete = useCallback(() => {
-    setIsSubmitted(true);
-  }, []);
+  if (!videoCompleted || !showWizard) {
+    return (
+      <VideoGate
+        language={selectedLanguage}
+        onComplete={() => {
+          setVideoCompleted(true);
+          setShowWizard(true);
+        }}
+      />
+    );
+  }
 
   return (
-    <div className="font-body selection:bg-[#FFC107]/30 selection:text-[#1F2937]">
-      {!showWizard && !isSubmitted && (
-        <>
-          <SurveyHero language={language} onLanguageChange={setLanguage} />
-          <VideoGate 
-            language={language} 
-            onVideoComplete={handleVideoComplete} 
-            onStartWizard={() => setShowWizard(true)}
-          />
-        </>
-      )}  
-
-      {isSubmitted ? (
-        <ThankYouScreen language={language} />
-      ) : (
-        <div
-          className={`transition-all duration-700 ${
-            !showWizard
-              ? 'opacity-30 pointer-events-none blur-sm select-none'
-              : ''
-          }`}
-        >
-          <SurveyWizard
-            language={language}
-            initialSchoolName={schoolParam || undefined}
-            isActive={showWizard}
-            onSubmitComplete={handleSubmitComplete}
-          />
-        </div>
-      )}
-    </div>
+    <SurveyWizard
+      language={selectedLanguage}
+      initialSchoolName={schoolParam || undefined}
+      isActive={showWizard}
+      onSubmitComplete={() => setSubmitted(true)}
+    />
   );
 }
 
