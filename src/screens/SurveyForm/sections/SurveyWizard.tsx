@@ -29,6 +29,7 @@ const INITIAL_DATA: SurveyData = {
   parentName: '',
   relationship: 'father',
   mobile: '',
+  alternateMobile: '',
   whatsappAvailable: false,
   email: '',
   devices: [],
@@ -121,6 +122,17 @@ const SurveyWizard = ({ language, initialSchoolName, isActive, onSubmitComplete 
           } else if (phoneDigits.length !== 10 || !/^[6-9]\d{9}$/.test(phoneDigits)) {
             newErrors.mobile = t.invalidPhone;
           }
+
+          if (surveyData.alternateMobile && surveyData.alternateMobile.trim()) {
+            let altPhoneDigits = surveyData.alternateMobile.replace(/\D/g, '');
+            if (altPhoneDigits.startsWith('91') && altPhoneDigits.length === 12) {
+               altPhoneDigits = altPhoneDigits.substring(2);
+            }
+            if (altPhoneDigits.length !== 10 || !/^[6-9]\d{9}$/.test(altPhoneDigits)) {
+              newErrors.alternateMobile = t.invalidPhone;
+            }
+          }
+
           if (surveyData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(surveyData.email)) {
             newErrors.email = t.invalidEmail;
           }

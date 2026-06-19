@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function SurveyFormPage() {
   return (
-    <main className=" bg-[#F5F7FA]">
+    <main className="min-h-screen  bg-[#F5F7FA]">
       <SurveyFormScreen />
     </main>
   );
