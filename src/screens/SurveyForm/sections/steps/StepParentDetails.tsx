@@ -119,7 +119,7 @@ const StepParentDetails = ({ data, onChange, errors, language }: StepParentDetai
       </div>
 
       {/* WhatsApp checkbox */}
-      <label className="flex items-center gap-3 cursor-pointer group">
+      <label className="flex items-center gap-3 cursor-pointer group pb-2">
         <input
           type="checkbox"
           checked={data.whatsappAvailable}
@@ -130,6 +130,43 @@ const StepParentDetails = ({ data, onChange, errors, language }: StepParentDetai
           {t.whatsappCheckbox}
         </span>
       </label>
+
+      {/* Alternate Mobile */}
+      <div className="space-y-1.5">
+        <label
+          htmlFor="alternateMobile"
+          className="text-xs font-bold text-gray-500 uppercase tracking-wider"
+        >
+          {/* @ts-ignore - added via dynamic typing */}
+          {t.alternateMobileLabel || 'Alternate Mobile (Optional)'}
+        </label>
+        <div className="flex gap-3">
+          <div className="w-[80px] h-12 flex items-center justify-center rounded-xl bg-[#F8F9FA] border border-gray-100 text-[#1F2937] font-bold text-sm shrink-0 opacity-70">
+            +91
+          </div>
+          <div className="flex-1">
+            <input
+              id="alternateMobile"
+              type="tel"
+              value={data.alternateMobile || ''}
+              onChange={(e) =>
+                onChange('alternateMobile', e.target.value.replace(/\D/g, '').slice(0, 10))
+              }
+              placeholder="9876543210"
+              maxLength={10}
+              className={`w-full h-12 px-5 rounded-xl bg-[#F8F9FA] border ${
+                errors.alternateMobile ? 'border-red-300' : 'border-gray-100'
+              } text-[#1F2937] font-medium placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20 transition-all`}
+              aria-describedby={errors.alternateMobile ? 'alternateMobile-error' : undefined}
+            />
+          </div>
+        </div>
+        {errors.alternateMobile && (
+          <p id="alternateMobile-error" className="text-xs text-red-500">
+            {errors.alternateMobile}
+          </p>
+        )}
+      </div>
 
       {/* Email */}
       <div className="space-y-1.5">

@@ -12,6 +12,7 @@ export interface SurveyData {
   parentName: string;
   relationship: Relationship;
   mobile: string;
+  alternateMobile?: string;
   whatsappAvailable: boolean;
   email: string;
   devices: string[];

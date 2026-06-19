@@ -19,7 +19,7 @@ interface VideoGateProps {
   onComplete: () => void;
 }
 
-const YOUTUBE_VIDEO_ID = 'XDR5GBEf0BM'; // Requested by user
+const YOUTUBE_VIDEO_ID = '3RDavSBr3pE'; // Requested by user
 
 const VideoGate = ({ language, onComplete }: VideoGateProps) => {
   const t = surveyTranslations[language];
